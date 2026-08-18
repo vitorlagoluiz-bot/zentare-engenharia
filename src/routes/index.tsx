@@ -28,8 +28,8 @@ function Index() {
       {/* Header */}
       <header 
         className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-6 md:px-12 py-3 md:py-4 transition-all duration-300 ${
-          scrolled ? "bg-white/98 shadow-xl" : "bg-gradient-to-b from-black/60 to-transparent"
-        } border-b ${scrolled ? "border-[#3B0B12]/10" : "border-transparent"} ${
+          scrolled ? "bg-white shadow-xl" : "bg-black/40 backdrop-blur-[2px]"
+        } border-b ${scrolled ? "border-[#3B0B12]/10" : "border-white/10"} ${
           scrolled ? "text-[#151515]" : "text-white"
         }`}
       >
