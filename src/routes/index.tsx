@@ -33,7 +33,7 @@ function Index() {
           scrolled ? "text-[#151515]" : "text-white"
         }`}
       >
-        <img src={zentareLogo.url} alt="Zentare Engenharia" className={`h-7 sm:h-8 md:h-10 w-auto object-contain shrink-0 transition-all ${!scrolled && "brightness-0 invert"}`} />
+        <img src={zentareLogo.url} alt="Zentare Engenharia" className="h-7 sm:h-8 md:h-10 w-auto object-contain shrink-0 transition-all" />
         
         <nav className="hidden lg:flex items-center gap-6 md:gap-8 text-xs md:text-sm font-medium tracking-wide uppercase">
           {navItems.map((item) => (
