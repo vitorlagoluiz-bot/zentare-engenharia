@@ -150,11 +150,11 @@ function Index() {
             </p>
           </div>
           <div className="order-1 lg:order-2">
-            <div className="grid grid-cols-2 gap-3 md:gap-4 h-full">
-              <div className="aspect-[3/4] rounded-lg overflow-hidden shadow-xl md:shadow-2xl">
+            <div className="grid grid-cols-2 gap-4 h-full relative">
+              <div className="aspect-[3/4] rounded-lg overflow-hidden shadow-2xl relative z-10 border border-white/10">
                 <img src={engJaqueline.url} alt="Eng.ª Civil Jaqueline Santos" className="w-full h-full object-cover" />
               </div>
-              <div className="aspect-[3/4] rounded-lg overflow-hidden shadow-xl md:shadow-2xl mt-8 md:mt-12">
+              <div className="aspect-[3/4] rounded-lg overflow-hidden shadow-2xl relative z-0 mt-12 md:mt-20 border border-white/10">
                 <img src={engWork.url} alt="Eng.ª Civil Jaqueline Santos em campo" className="w-full h-full object-cover" />
               </div>
             </div>
