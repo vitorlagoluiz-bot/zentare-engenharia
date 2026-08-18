@@ -15,19 +15,23 @@ function Index() {
   return (
     <div className="min-h-screen bg-[#F5F2EC] font-sans text-[#151515]">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-[#3B0B12]/10 text-[#151515]">
-        <img src={zentareLogo.url} alt="Zentare Engenharia" className="h-10 w-auto" />
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide uppercase">
+      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-[#3B0B12]/10 text-[#151515]">
+        <img src={zentareLogo.url} alt="Zentare Engenharia" className="h-8 md:h-10 w-auto object-contain" />
+        <nav className="hidden lg:flex items-center gap-6 md:gap-8 text-xs md:text-sm font-medium tracking-wide uppercase">
           {["Início", "Sobre", "Serviços", "Pacotes", "Contato"].map((item) => (
-            <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-[#3B0B12] transition-colors relative group">
+            <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-[#3B0B12] transition-colors relative group whitespace-nowrap">
               {item}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#C9A24A] transition-all group-hover:w-full"></span>
             </a>
           ))}
-          <a href={WHATSAPP_LINK} className="bg-[#C9A24A] text-[#3B0B12] px-6 py-2.5 rounded font-bold hover:bg-[#E4C878] transition-colors">
+          <a href={WHATSAPP_LINK} className="bg-[#C9A24A] text-[#3B0B12] px-4 md:px-6 py-2 md:py-2.5 rounded font-bold hover:bg-[#E4C878] transition-colors text-xs md:text-sm whitespace-nowrap">
             SOLICITAR ORÇAMENTO
           </a>
         </nav>
+        {/* Mobile menu button (placeholder for implementation if needed, keeping it simple for now) */}
+        <div className="lg:hidden">
+          <MessageCircle className="w-6 h-6 text-[#3B0B12]" />
+        </div>
       </header>
 
       {/* Hero */}
