@@ -100,12 +100,14 @@ function Index() {
       {/* Hero */}
       <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2000')] bg-cover bg-center" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#151515]/90 to-transparent" />
-        <div className="relative z-10 text-left px-6 md:px-12 w-full max-w-6xl mx-auto text-[#F5F2EC] py-20">
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl mb-6 md:mb-8 leading-[1.1] max-w-4xl break-words">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#151515] via-[#151515]/80 to-transparent z-0" />
+        <div className="absolute inset-0 bg-[#3B0B12]/20 z-0 mix-blend-multiply" />
+        
+        <div className="relative z-10 text-left px-6 md:px-12 w-full max-w-6xl mx-auto text-[#F5F2EC] py-32 md:py-40">
+          <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl mb-8 md:mb-10 leading-[1.1] max-w-5xl break-words drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
             Engenharia que transforma análise técnica em segurança para o seu patrimônio.
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl mb-8 md:mb-12 text-[#F5F2EC]/90 max-w-3xl leading-relaxed">
+          <p className="text-xl sm:text-2xl md:text-3xl mb-10 md:mb-14 text-white font-medium max-w-3xl leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
             Vistorias, laudos, inspeções, acompanhamento de obras e soluções técnicas com responsabilidade profissional.
           </p>
           <div className="flex gap-4 justify-start flex-col sm:flex-row">
