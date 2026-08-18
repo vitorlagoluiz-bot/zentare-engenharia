@@ -15,11 +15,14 @@ function Index() {
   return (
     <div className="min-h-screen bg-[#F5F2EC] font-sans text-[#151515]">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 transition-all duration-300 bg-[#3B0B12]/95 text-[#F5F2EC]">
+      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-[#3B0B12]/10 text-[#151515]">
         <img src={zentareLogo.url} alt="Zentare Engenharia" className="h-10 w-auto" />
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide uppercase">
           {["Início", "Sobre", "Serviços", "Pacotes", "Contato"].map((item) => (
-            <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-[#C9A24A] transition-colors">{item}</a>
+            <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-[#3B0B12] transition-colors relative group">
+              {item}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#C9A24A] transition-all group-hover:w-full"></span>
+            </a>
           ))}
           <a href={WHATSAPP_LINK} className="bg-[#C9A24A] text-[#3B0B12] px-6 py-2.5 rounded font-bold hover:bg-[#E4C878] transition-colors">
             SOLICITAR ORÇAMENTO
@@ -30,13 +33,13 @@ function Index() {
       {/* Hero */}
       <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2000')] bg-cover bg-center" />
-        <div className="absolute inset-0 bg-[#3B0B12]/90 mix-blend-multiply" />
-        <div className="relative z-10 text-center px-4 max-w-5xl text-[#F5F2EC]">
-          <h1 className="font-serif text-5xl md:text-8xl mb-8 leading-tight">Engenharia que transforma análise técnica em segurança para o seu patrimônio.</h1>
-          <p className="text-xl md:text-2xl mb-12 text-[#F5F2EC]/90 max-w-3xl mx-auto">Vistorias, laudos, inspeções, acompanhamento de obras e soluções técnicas com responsabilidade profissional.</p>
-          <div className="flex gap-4 justify-center flex-col md:flex-row">
-            <a href={WHATSAPP_LINK} className="bg-[#C9A24A] text-[#3B0B12] px-10 py-4 rounded font-bold hover:bg-[#E4C878] transition-colors text-lg uppercase tracking-wider">Solicitar orçamento</a>
-            <a href="#serviços" className="border border-[#F5F2EC] px-10 py-4 rounded font-bold hover:bg-[#F5F2EC] hover:text-[#3B0B12] transition-colors text-lg uppercase tracking-wider">Conheça nossos serviços</a>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#151515]/90 to-transparent" />
+        <div className="relative z-10 text-left px-8 w-full max-w-6xl mx-auto text-[#F5F2EC]">
+          <h1 className="font-serif text-5xl md:text-8xl mb-8 leading-tight max-w-4xl">Engenharia que transforma análise técnica em segurança para o seu patrimônio.</h1>
+          <p className="text-xl md:text-2xl mb-12 text-[#F5F2EC]/90 max-w-3xl">Vistorias, laudos, inspeções, acompanhamento de obras e soluções técnicas com responsabilidade profissional.</p>
+          <div className="flex gap-4 justify-start flex-col md:flex-row">
+            <a href={WHATSAPP_LINK} className="bg-[#C9A24A] text-[#3B0B12] px-10 py-4 rounded font-bold hover:bg-[#E4C878] transition-all hover:scale-105 text-lg uppercase tracking-wider text-center">Solicitar orçamento</a>
+            <a href="#serviços" className="bg-white/10 backdrop-blur-sm border border-white/20 px-10 py-4 rounded font-bold hover:bg-white hover:text-[#3B0B12] transition-all hover:scale-105 text-lg uppercase tracking-wider text-center">Conheça nossos serviços</a>
           </div>
         </div>
       </section>
@@ -207,9 +210,9 @@ function Index() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 bg-[#3B0B12] text-[#F5F2EC] px-8 text-center">
-        <h2 className="font-serif text-4xl mb-6">Precisa de uma avaliação técnica para o seu imóvel ou obra?</h2>
-        <p className="text-xl mb-10 opacity-90">Fale com a Zentare Engenharia e encontre a solução técnica adequada para o seu caso.</p>
+      <section className="py-24 bg-white border-t border-[#3B0B12]/5 text-[#151515] px-8 text-center">
+        <h2 className="font-serif text-4xl mb-6 text-[#3B0B12]">Precisa de uma avaliação técnica para o seu imóvel ou obra?</h2>
+        <p className="text-xl mb-10 text-[#151515]/70">Fale com a Zentare Engenharia e encontre a solução técnica adequada para o seu caso.</p>
         <a href={WHATSAPP_LINK} className="inline-flex items-center gap-3 bg-[#C9A24A] text-[#3B0B12] px-10 py-4 rounded font-bold text-lg hover:bg-[#E4C878]">
           <MessageCircle className="w-5 h-5" /> SOLICITAR ORÇAMENTO PELO WHATSAPP
         </a>
