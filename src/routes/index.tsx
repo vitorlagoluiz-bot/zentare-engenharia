@@ -15,7 +15,7 @@ function Index() {
   return (
     <div className="min-h-screen bg-[#F5F2EC] font-sans text-[#151515]">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 transition-all duration-300 bg-[#3B0B12]/95 text-[#F5F2EC]">
+      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-[#3B0B12]/10 text-[#151515]">
         <img src={zentareLogo.url} alt="Zentare Engenharia" className="h-10 w-auto" />
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide uppercase">
           {["Início", "Sobre", "Serviços", "Pacotes", "Contato"].map((item) => (
