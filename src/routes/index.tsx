@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Building2, ShieldCheck, FileCheck, ClipboardList, HardHat, Award, MessageCircle, CheckCircle2 } from "lucide-react";
 import zentareLogo from "@/assets/zentare-logo.png.asset.json";
 import engJaqueline from "@/assets/eng-jaqueline.png.asset.json";
+import engWork from "@/assets/eng-work.png.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Index,
