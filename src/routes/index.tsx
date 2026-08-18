@@ -99,7 +99,7 @@ function Index() {
       <section className="py-24 px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-serif text-4xl text-[#3B0B12] mb-16 text-center">Engenharia baseada em confiança, precisão e responsabilidade.</h2>
-          <div className="grid md:grid-cols-3 gap-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
             {[
               { 
                 title: "Excelência Técnica", 
@@ -117,12 +117,12 @@ function Index() {
                 icon: Award
               },
             ].map((d, i) => (
-              <div key={i} className="text-center group">
-                <div className="w-20 h-20 bg-[#3B0B12]/5 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-[#C9A24A]/10 transition-colors">
-                  <d.icon className="w-10 h-10 text-[#C9A24A]" />
+              <div key={i} className="text-center group p-6 rounded-xl hover:bg-[#3B0B12]/5 transition-colors">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-[#3B0B12]/5 rounded-full flex items-center justify-center mx-auto mb-6 md:mb-8 group-hover:bg-[#C9A24A]/10 transition-colors">
+                  <d.icon className="w-8 h-8 md:w-10 md:h-10 text-[#C9A24A]" />
                 </div>
-                <h3 className="font-serif text-2xl text-[#3B0B12] mb-4">{d.title}</h3>
-                <p className="text-[#151515]/70 leading-relaxed">{d.desc}</p>
+                <h3 className="font-serif text-xl md:text-2xl text-[#3B0B12] mb-4">{d.title}</h3>
+                <p className="text-[#151515]/70 leading-relaxed text-sm md:text-base">{d.desc}</p>
               </div>
             ))}
           </div>
