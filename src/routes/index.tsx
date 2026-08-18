@@ -68,8 +68,8 @@ function Index() {
               Especializada em vistorias técnicas, laudos de engenharia, inspeções prediais, acompanhamento de obras, emissão de ART e regularização de imóveis, oferece soluções seguras e personalizadas para construtoras, condomínios, empresas e clientes particulares.
             </p>
           </div>
-          <div className="h-full bg-[#3B0B12]/10 aspect-video rounded-lg flex items-center justify-center">
-             <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=800" alt="Eng.ª Civil Jaqueline Santos" className="w-full h-full object-cover rounded-lg" />
+          <div className="h-full bg-[#3B0B12]/10 aspect-[4/5] rounded-lg overflow-hidden shadow-2xl">
+             <img src={engJaqueline.url} alt="Eng.ª Civil Jaqueline Santos" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>
