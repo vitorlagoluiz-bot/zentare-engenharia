@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 import { ArrowRight, Building2, ShieldCheck, FileCheck, ClipboardList, HardHat, Award, MessageCircle, CheckCircle2 } from "lucide-react";
 import zentareLogo from "@/assets/zentare-logo.png.asset.json";
 import engJaqueline from "@/assets/eng-jaqueline.png.asset.json";
@@ -10,28 +11,90 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const WHATSAPP_LINK = "https://wa.me/5511918579184";
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navItems = ["Início", "Sobre", "Serviços", "Pacotes", "Contato"];
 
   return (
     <div className="min-h-screen bg-[#F5F2EC] font-sans text-[#151515]">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-6 md:px-12 py-3 md:py-4 transition-all duration-300 bg-white/95 backdrop-blur-md border-b border-[#3B0B12]/10 text-[#151515]">
-        <img src={zentareLogo.url} alt="Zentare Engenharia" className="h-7 sm:h-8 md:h-10 w-auto object-contain shrink-0" />
+      <header 
+        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-6 md:px-12 py-3 md:py-4 transition-all duration-300 ${
+          scrolled ? "bg-white/95 backdrop-blur-md shadow-md" : "bg-transparent"
+        } border-b ${scrolled ? "border-[#3B0B12]/10" : "border-transparent"} ${
+          scrolled ? "text-[#151515]" : "text-white"
+        }`}
+      >
+        <img src={zentareLogo.url} alt="Zentare Engenharia" className={`h-7 sm:h-8 md:h-10 w-auto object-contain shrink-0 transition-all ${!scrolled && "brightness-0 invert"}`} />
+        
         <nav className="hidden lg:flex items-center gap-6 md:gap-8 text-xs md:text-sm font-medium tracking-wide uppercase">
-          {["Início", "Sobre", "Serviços", "Pacotes", "Contato"].map((item) => (
-            <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-[#3B0B12] transition-colors relative group whitespace-nowrap">
+          {navItems.map((item) => (
+            <a 
+              key={item} 
+              href={`#${item.toLowerCase()}`} 
+              className="hover:text-[#C9A24A] transition-colors relative group whitespace-nowrap"
+            >
               {item}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#C9A24A] transition-all group-hover:w-full"></span>
             </a>
           ))}
-          <a href={WHATSAPP_LINK} className="bg-[#C9A24A] text-[#3B0B12] px-4 md:px-6 py-2 md:py-2.5 rounded font-bold hover:bg-[#E4C878] transition-colors text-xs md:text-sm whitespace-nowrap">
+          <a 
+            href={WHATSAPP_LINK} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-[#C9A24A] text-[#3B0B12] px-4 md:px-6 py-2 md:py-2.5 rounded font-bold hover:bg-[#E4C878] transition-colors text-xs md:text-sm whitespace-nowrap shadow-lg hover:shadow-xl"
+          >
             SOLICITAR ORÇAMENTO
           </a>
         </nav>
-        {/* Mobile menu button (placeholder for implementation if needed, keeping it simple for now) */}
-        <div className="lg:hidden">
-          <MessageCircle className="w-6 h-6 text-[#3B0B12]" />
-        </div>
+
+        <button 
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="lg:hidden p-2 rounded-md hover:bg-[#3B0B12]/5 transition-colors"
+          aria-label="Menu"
+        >
+          <div className={`w-6 h-0.5 mb-1.5 transition-all bg-current ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`} />
+          <div className={`w-6 h-0.5 mb-1.5 transition-all bg-current ${isMenuOpen ? "opacity-0" : ""}`} />
+          <div className={`w-6 h-0.5 transition-all bg-current ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+        </button>
+
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="absolute top-full left-0 right-0 bg-white shadow-2xl border-t border-[#3B0B12]/10 p-6 flex flex-col gap-4 lg:hidden"
+            >
+              {navItems.map((item) => (
+                <a 
+                  key={item} 
+                  href={`#${item.toLowerCase()}`} 
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-lg font-serif text-[#3B0B12] py-2 border-b border-[#3B0B12]/5"
+                >
+                  {item}
+                </a>
+              ))}
+              <a 
+                href={WHATSAPP_LINK}
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-[#C9A24A] text-[#3B0B12] py-4 rounded font-bold text-center mt-4"
+              >
+                SOLICITAR ORÇAMENTO
+              </a>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </header>
 
       {/* Hero */}
@@ -243,21 +306,38 @@ function Index() {
             <div>
                 <h4 className="text-[#C9A24A] font-bold mb-6 uppercase tracking-widest text-xs">Navegação</h4>
                 <ul className="space-y-3 text-[#F5F2EC]/60 text-sm">
-                    {["Início", "Sobre", "Serviços", "Pacotes", "Contato"].map(i => <li key={i}><a href={`#${i.toLowerCase()}`} className="hover:text-[#C9A24A] transition-colors">{i}</a></li>)}
+                    {navItems.map(i => <li key={i}><a href={`#${i.toLowerCase()}`} className="hover:text-[#C9A24A] transition-colors">{i}</a></li>)}
                 </ul>
             </div>
             <div>
                 <h4 className="text-[#C9A24A] font-bold mb-6 uppercase tracking-widest text-xs">Contato</h4>
-                <a href={WHATSAPP_LINK} className="inline-flex items-center gap-2 text-[#C9A24A] font-bold hover:underline">
-                    <MessageCircle className="w-4 h-4" /> WhatsApp
-                </a>
+                <div className="space-y-4">
+                  <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#C9A24A] font-bold hover:underline">
+                      <MessageCircle className="w-4 h-4" /> WhatsApp
+                  </a>
+                  <p className="text-xs text-[#F5F2EC]/40 leading-relaxed">
+                    Atendimento especializado em São Paulo e região.
+                  </p>
+                </div>
             </div>
+        </div>
+        <div className="max-w-6xl mx-auto mt-16 pt-8 border-t border-white/10 text-center text-[#F5F2EC]/30 text-[10px] uppercase tracking-widest">
+          <p>© {new Date().getFullYear()} Zentare Engenharia. Todos os direitos reservados.</p>
         </div>
       </footer>
 
       {/* WhatsApp Floating */}
-      <a href={WHATSAPP_LINK} className="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform">
-        <MessageCircle className="w-8 h-8" />
+      <a 
+        href={WHATSAPP_LINK} 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform active:scale-95 group"
+        aria-label="Falar no WhatsApp"
+      >
+        <MessageCircle className="w-6 h-6 md:w-8 md:h-8" />
+        <span className="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-white text-[#151515] px-3 py-1.5 rounded shadow-xl text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+          Solicitar Orçamento
+        </span>
       </a>
     </div>
   );
