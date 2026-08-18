@@ -11,7 +11,17 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const WHATSAPP_LINK = "https://wa.me/5511918579184";
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navItems = ["Início", "Sobre", "Serviços", "Pacotes", "Contato"];
 
   return (
     <div className="min-h-screen bg-[#F5F2EC] font-sans text-[#151515]">
