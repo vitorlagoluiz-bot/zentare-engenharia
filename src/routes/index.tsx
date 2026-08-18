@@ -212,9 +212,9 @@ function Index() {
       <footer id="contato" className="bg-[#151515] text-[#F5F2EC] py-16 px-8">
         <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-12">
             <div className="col-span-2">
-                <h3 className="font-serif text-2xl text-[#C9A24A] mb-4">ZENTARE ENGENHARIA</h3>
-                <p className="text-[#F5F2EC]/60 mb-2 font-bold">Eng.ª Civil Jaqueline Santos</p>
-                <p className="text-[#F5F2EC]/60">Soluções em engenharia com responsabilidade técnica, precisão e compromisso.</p>
+                <h3 className="font-serif text-2xl text-[#C9A24A] mb-4 uppercase tracking-wider">ZENTARE ENGENHARIA</h3>
+                <p className="text-[#F5F2EC]/90 mb-2 font-bold text-lg">Eng.ª Civil Jaqueline Santos</p>
+                <p className="text-[#F5F2EC]/60 max-w-sm">Soluções em engenharia com responsabilidade técnica, precisão e compromisso.</p>
             </div>
             <div>
                 <h4 className="text-[#C9A24A] font-bold mb-6 uppercase tracking-widest text-sm">Navegação</h4>
