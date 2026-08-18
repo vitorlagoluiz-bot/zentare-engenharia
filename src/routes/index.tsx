@@ -33,10 +33,10 @@ function Index() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#151515]/90 to-transparent" />
         <div className="relative z-10 text-left px-8 w-full max-w-6xl mx-auto text-[#F5F2EC]">
           <h1 className="font-serif text-5xl md:text-8xl mb-8 leading-tight max-w-4xl">Engenharia que transforma análise técnica em segurança para o seu patrimônio.</h1>
-          <p className="text-xl md:text-2xl mb-12 text-[#F5F2EC]/90 max-w-3xl mx-auto">Vistorias, laudos, inspeções, acompanhamento de obras e soluções técnicas com responsabilidade profissional.</p>
-          <div className="flex gap-4 justify-center flex-col md:flex-row">
-            <a href={WHATSAPP_LINK} className="bg-[#C9A24A] text-[#3B0B12] px-10 py-4 rounded font-bold hover:bg-[#E4C878] transition-colors text-lg uppercase tracking-wider">Solicitar orçamento</a>
-            <a href="#serviços" className="border border-[#F5F2EC] px-10 py-4 rounded font-bold hover:bg-[#F5F2EC] hover:text-[#3B0B12] transition-colors text-lg uppercase tracking-wider">Conheça nossos serviços</a>
+          <p className="text-xl md:text-2xl mb-12 text-[#F5F2EC]/90 max-w-3xl">Vistorias, laudos, inspeções, acompanhamento de obras e soluções técnicas com responsabilidade profissional.</p>
+          <div className="flex gap-4 justify-start flex-col md:flex-row">
+            <a href={WHATSAPP_LINK} className="bg-[#C9A24A] text-[#3B0B12] px-10 py-4 rounded font-bold hover:bg-[#E4C878] transition-all hover:scale-105 text-lg uppercase tracking-wider text-center">Solicitar orçamento</a>
+            <a href="#serviços" className="bg-white/10 backdrop-blur-sm border border-white/20 px-10 py-4 rounded font-bold hover:bg-white hover:text-[#3B0B12] transition-all hover:scale-105 text-lg uppercase tracking-wider text-center">Conheça nossos serviços</a>
           </div>
         </div>
       </section>
