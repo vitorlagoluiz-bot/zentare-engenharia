@@ -201,20 +201,20 @@ function Index() {
                         ]
                     },
                 ].map((p, i) => (
-                    <div key={i} className={`p-8 rounded-lg border bg-white flex flex-col h-full ${p.popular ? "border-[#C9A24A] shadow-2xl md:scale-105 z-10" : "border-[#3B0B12]/10"}`}>
-                        {p.popular && <span className="bg-[#C9A24A] text-[#3B0B12] px-3 py-1 rounded text-xs font-bold uppercase mb-4 block w-max">MAIS CONTRATADO</span>}
-                        <h3 className="text-xl font-bold text-[#3B0B12] mb-2">{p.title}</h3>
-                        <p className="text-[#151515]/70 text-sm mb-6 min-h-[40px]">{p.desc}</p>
-                        <p className="text-4xl font-serif text-[#3B0B12] font-bold mb-6">R$ {p.price}</p>
+                    <div key={i} className={`p-6 md:p-8 rounded-lg border bg-white flex flex-col h-full transition-all duration-300 ${p.popular ? "border-[#C9A24A] shadow-2xl lg:scale-105 z-10" : "border-[#3B0B12]/10"}`}>
+                        {p.popular && <span className="bg-[#C9A24A] text-[#3B0B12] px-3 py-1 rounded text-[10px] md:text-xs font-bold uppercase mb-4 block w-max mx-auto lg:mx-0">MAIS CONTRATADO</span>}
+                        <h3 className="text-lg md:text-xl font-bold text-[#3B0B12] mb-2">{p.title}</h3>
+                        <p className="text-[#151515]/70 text-xs md:text-sm mb-6 min-h-[40px]">{p.desc}</p>
+                        <p className="text-3xl md:text-4xl font-serif text-[#3B0B12] font-bold mb-6">R$ {p.price}</p>
                         <ul className="space-y-3 mb-8 flex-grow">
                             {p.items.map((item, idx) => (
-                                <li key={idx} className="flex gap-2 text-sm text-[#151515]/80">
+                                <li key={idx} className="flex gap-2 text-xs md:text-sm text-[#151515]/80">
                                     <CheckCircle2 className="w-4 h-4 text-[#C9A24A] shrink-0 mt-0.5" />
                                     <span>{item}</span>
                                 </li>
                             ))}
                         </ul>
-                        <a href={WHATSAPP_LINK} className={`block text-center py-4 rounded font-bold transition-colors ${p.popular ? "bg-[#C9A24A] text-[#3B0B12] hover:bg-[#E4C878]" : "border border-[#3B0B12] text-[#3B0B12] hover:bg-[#3B0B12] hover:text-white"}`}>Solicitar orçamento</a>
+                        <a href={WHATSAPP_LINK} className={`block text-center py-3 md:py-4 rounded font-bold transition-all text-sm md:text-base ${p.popular ? "bg-[#C9A24A] text-[#3B0B12] hover:bg-[#E4C878] hover:scale-[1.02]" : "border border-[#3B0B12] text-[#3B0B12] hover:bg-[#3B0B12] hover:text-white hover:scale-[1.02]"}`}>Solicitar orçamento</a>
                     </div>
                 ))}
             </div>
