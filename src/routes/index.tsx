@@ -26,23 +26,75 @@ function Index() {
   return (
     <div className="min-h-screen bg-[#F5F2EC] font-sans text-[#151515]">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-6 md:px-12 py-3 md:py-4 transition-all duration-300 bg-white/95 backdrop-blur-md border-b border-[#3B0B12]/10 text-[#151515]">
-        <img src={zentareLogo.url} alt="Zentare Engenharia" className="h-7 sm:h-8 md:h-10 w-auto object-contain shrink-0" />
+      <header 
+        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-6 md:px-12 py-3 md:py-4 transition-all duration-300 ${
+          scrolled ? "bg-white/95 backdrop-blur-md shadow-md" : "bg-transparent"
+        } border-b ${scrolled ? "border-[#3B0B12]/10" : "border-transparent"} ${
+          scrolled ? "text-[#151515]" : "text-white"
+        }`}
+      >
+        <img src={zentareLogo.url} alt="Zentare Engenharia" className={`h-7 sm:h-8 md:h-10 w-auto object-contain shrink-0 transition-all ${!scrolled && "brightness-0 invert"}`} />
+        
         <nav className="hidden lg:flex items-center gap-6 md:gap-8 text-xs md:text-sm font-medium tracking-wide uppercase">
-          {["Início", "Sobre", "Serviços", "Pacotes", "Contato"].map((item) => (
-            <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-[#3B0B12] transition-colors relative group whitespace-nowrap">
+          {navItems.map((item) => (
+            <a 
+              key={item} 
+              href={`#${item.toLowerCase()}`} 
+              className="hover:text-[#C9A24A] transition-colors relative group whitespace-nowrap"
+            >
               {item}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#C9A24A] transition-all group-hover:w-full"></span>
             </a>
           ))}
-          <a href={WHATSAPP_LINK} className="bg-[#C9A24A] text-[#3B0B12] px-4 md:px-6 py-2 md:py-2.5 rounded font-bold hover:bg-[#E4C878] transition-colors text-xs md:text-sm whitespace-nowrap">
+          <a 
+            href={WHATSAPP_LINK} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-[#C9A24A] text-[#3B0B12] px-4 md:px-6 py-2 md:py-2.5 rounded font-bold hover:bg-[#E4C878] transition-colors text-xs md:text-sm whitespace-nowrap shadow-lg hover:shadow-xl"
+          >
             SOLICITAR ORÇAMENTO
           </a>
         </nav>
-        {/* Mobile menu button (placeholder for implementation if needed, keeping it simple for now) */}
-        <div className="lg:hidden">
-          <MessageCircle className="w-6 h-6 text-[#3B0B12]" />
-        </div>
+
+        <button 
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="lg:hidden p-2 rounded-md hover:bg-[#3B0B12]/5 transition-colors"
+          aria-label="Menu"
+        >
+          <div className={`w-6 h-0.5 mb-1.5 transition-all bg-current ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`} />
+          <div className={`w-6 h-0.5 mb-1.5 transition-all bg-current ${isMenuOpen ? "opacity-0" : ""}`} />
+          <div className={`w-6 h-0.5 transition-all bg-current ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+        </button>
+
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="absolute top-full left-0 right-0 bg-white shadow-2xl border-t border-[#3B0B12]/10 p-6 flex flex-col gap-4 lg:hidden"
+            >
+              {navItems.map((item) => (
+                <a 
+                  key={item} 
+                  href={`#${item.toLowerCase()}`} 
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-lg font-serif text-[#3B0B12] py-2 border-b border-[#3B0B12]/5"
+                >
+                  {item}
+                </a>
+              ))}
+              <a 
+                href={WHATSAPP_LINK}
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-[#C9A24A] text-[#3B0B12] py-4 rounded font-bold text-center mt-4"
+              >
+                SOLICITAR ORÇAMENTO
+              </a>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </header>
 
       {/* Hero */}
