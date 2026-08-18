@@ -74,22 +74,24 @@ function Index() {
 
       {/* About */}
       <section id="sobre" className="py-24 px-8 bg-[#F5F2EC]">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <div className="space-y-6">
-            <h2 className="font-serif text-4xl text-[#3B0B12]">Por que escolher a Zentare Engenharia?</h2>
-            <p className="text-lg text-[#151515]/80 leading-relaxed">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="space-y-6 order-2 lg:order-1">
+            <h2 className="font-serif text-3xl md:text-4xl text-[#3B0B12]">Por que escolher a Zentare Engenharia?</h2>
+            <p className="text-base md:text-lg text-[#151515]/80 leading-relaxed">
               A Zentare Engenharia é uma marca de atuação profissional fundada pela <strong>Eng.ª Civil Jaqueline Santos</strong>, dedicada à prestação de serviços de engenharia com responsabilidade técnica, ética e qualidade.
             </p>
-            <p className="text-lg text-[#151515]/80 leading-relaxed">
+            <p className="text-base md:text-lg text-[#151515]/80 leading-relaxed">
               Especializada em vistorias técnicas, laudos de engenharia, inspeções prediais, acompanhamento de obras, emissão de ART e regularização de imóveis, oferece soluções seguras e personalizadas para construtoras, condomínios, empresas e clientes particulares.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-4 h-full">
-            <div className="aspect-[3/4] rounded-lg overflow-hidden shadow-2xl">
-              <img src={engJaqueline.url} alt="Eng.ª Civil Jaqueline Santos" className="w-full h-full object-cover" />
-            </div>
-            <div className="aspect-[3/4] rounded-lg overflow-hidden shadow-2xl mt-12">
-              <img src={engWork.url} alt="Eng.ª Civil Jaqueline Santos em campo" className="w-full h-full object-cover" />
+          <div className="order-1 lg:order-2">
+            <div className="grid grid-cols-2 gap-3 md:gap-4 h-full">
+              <div className="aspect-[3/4] rounded-lg overflow-hidden shadow-xl md:shadow-2xl">
+                <img src={engJaqueline.url} alt="Eng.ª Civil Jaqueline Santos" className="w-full h-full object-cover" />
+              </div>
+              <div className="aspect-[3/4] rounded-lg overflow-hidden shadow-xl md:shadow-2xl mt-8 md:mt-12">
+                <img src={engWork.url} alt="Eng.ª Civil Jaqueline Santos em campo" className="w-full h-full object-cover" />
+              </div>
             </div>
           </div>
         </div>
