@@ -19,7 +19,10 @@ function Index() {
         <img src={zentareLogo.url} alt="Zentare Engenharia" className="h-10 w-auto" />
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide uppercase">
           {["Início", "Sobre", "Serviços", "Pacotes", "Contato"].map((item) => (
-            <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-[#C9A24A] transition-colors">{item}</a>
+            <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-[#3B0B12] transition-colors relative group">
+              {item}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#C9A24A] transition-all group-hover:w-full"></span>
+            </a>
           ))}
           <a href={WHATSAPP_LINK} className="bg-[#C9A24A] text-[#3B0B12] px-6 py-2.5 rounded font-bold hover:bg-[#E4C878] transition-colors">
             SOLICITAR ORÇAMENTO
