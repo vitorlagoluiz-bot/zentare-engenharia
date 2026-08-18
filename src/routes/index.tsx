@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Building2, ShieldCheck, FileCheck, ClipboardList, HardHat, Award, MessageCircle, CheckCircle2 } from "lucide-react";
 import zentareLogo from "@/assets/zentare-logo.png.asset.json";
 import engJaqueline from "@/assets/eng-jaqueline.png.asset.json";
+import engWork from "@/assets/eng-work.png.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -68,8 +69,13 @@ function Index() {
               Especializada em vistorias técnicas, laudos de engenharia, inspeções prediais, acompanhamento de obras, emissão de ART e regularização de imóveis, oferece soluções seguras e personalizadas para construtoras, condomínios, empresas e clientes particulares.
             </p>
           </div>
-          <div className="h-full bg-[#3B0B12]/10 aspect-[4/5] rounded-lg overflow-hidden shadow-2xl">
-             <img src={engJaqueline.url} alt="Eng.ª Civil Jaqueline Santos" className="w-full h-full object-cover" />
+          <div className="grid grid-cols-2 gap-4 h-full">
+            <div className="aspect-[3/4] rounded-lg overflow-hidden shadow-2xl">
+              <img src={engJaqueline.url} alt="Eng.ª Civil Jaqueline Santos" className="w-full h-full object-cover" />
+            </div>
+            <div className="aspect-[3/4] rounded-lg overflow-hidden shadow-2xl mt-12">
+              <img src={engWork.url} alt="Eng.ª Civil Jaqueline Santos em campo" className="w-full h-full object-cover" />
+            </div>
           </div>
         </div>
       </section>
