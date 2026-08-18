@@ -15,31 +15,43 @@ function Index() {
   return (
     <div className="min-h-screen bg-[#F5F2EC] font-sans text-[#151515]">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-[#3B0B12]/10 text-[#151515]">
-        <img src={zentareLogo.url} alt="Zentare Engenharia" className="h-10 w-auto" />
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide uppercase">
+      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-[#3B0B12]/10 text-[#151515]">
+        <img src={zentareLogo.url} alt="Zentare Engenharia" className="h-8 md:h-10 w-auto object-contain" />
+        <nav className="hidden lg:flex items-center gap-6 md:gap-8 text-xs md:text-sm font-medium tracking-wide uppercase">
           {["Início", "Sobre", "Serviços", "Pacotes", "Contato"].map((item) => (
-            <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-[#3B0B12] transition-colors relative group">
+            <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-[#3B0B12] transition-colors relative group whitespace-nowrap">
               {item}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#C9A24A] transition-all group-hover:w-full"></span>
             </a>
           ))}
-          <a href={WHATSAPP_LINK} className="bg-[#C9A24A] text-[#3B0B12] px-6 py-2.5 rounded font-bold hover:bg-[#E4C878] transition-colors">
+          <a href={WHATSAPP_LINK} className="bg-[#C9A24A] text-[#3B0B12] px-4 md:px-6 py-2 md:py-2.5 rounded font-bold hover:bg-[#E4C878] transition-colors text-xs md:text-sm whitespace-nowrap">
             SOLICITAR ORÇAMENTO
           </a>
         </nav>
+        {/* Mobile menu button (placeholder for implementation if needed, keeping it simple for now) */}
+        <div className="lg:hidden">
+          <MessageCircle className="w-6 h-6 text-[#3B0B12]" />
+        </div>
       </header>
 
       {/* Hero */}
       <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2000')] bg-cover bg-center" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#151515]/90 to-transparent" />
-        <div className="relative z-10 text-left px-8 w-full max-w-6xl mx-auto text-[#F5F2EC]">
-          <h1 className="font-serif text-5xl md:text-8xl mb-8 leading-tight max-w-4xl">Engenharia que transforma análise técnica em segurança para o seu patrimônio.</h1>
-          <p className="text-xl md:text-2xl mb-12 text-[#F5F2EC]/90 max-w-3xl">Vistorias, laudos, inspeções, acompanhamento de obras e soluções técnicas com responsabilidade profissional.</p>
-          <div className="flex gap-4 justify-start flex-col md:flex-row">
-            <a href={WHATSAPP_LINK} className="bg-[#C9A24A] text-[#3B0B12] px-10 py-4 rounded font-bold hover:bg-[#E4C878] transition-all hover:scale-105 text-lg uppercase tracking-wider text-center">Solicitar orçamento</a>
-            <a href="#serviços" className="bg-white/10 backdrop-blur-sm border border-white/20 px-10 py-4 rounded font-bold hover:bg-white hover:text-[#3B0B12] transition-all hover:scale-105 text-lg uppercase tracking-wider text-center">Conheça nossos serviços</a>
+        <div className="relative z-10 text-left px-6 md:px-12 w-full max-w-6xl mx-auto text-[#F5F2EC] py-20">
+          <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl mb-6 md:mb-8 leading-[1.1] max-w-4xl break-words">
+            Engenharia que transforma análise técnica em segurança para o seu patrimônio.
+          </h1>
+          <p className="text-lg sm:text-xl md:text-2xl mb-8 md:mb-12 text-[#F5F2EC]/90 max-w-3xl leading-relaxed">
+            Vistorias, laudos, inspeções, acompanhamento de obras e soluções técnicas com responsabilidade profissional.
+          </p>
+          <div className="flex gap-4 justify-start flex-col sm:flex-row">
+            <a href={WHATSAPP_LINK} className="bg-[#C9A24A] text-[#3B0B12] px-8 md:px-10 py-3 md:py-4 rounded font-bold hover:bg-[#E4C878] transition-all hover:scale-105 text-base md:text-lg uppercase tracking-wider text-center whitespace-nowrap">
+              Solicitar orçamento
+            </a>
+            <a href="#serviços" className="bg-white/10 backdrop-blur-sm border border-white/20 px-8 md:px-10 py-3 md:py-4 rounded font-bold hover:bg-white hover:text-[#3B0B12] transition-all hover:scale-105 text-base md:text-lg uppercase tracking-wider text-center whitespace-nowrap">
+              Conheça nossos serviços
+            </a>
           </div>
         </div>
       </section>
@@ -62,22 +74,24 @@ function Index() {
 
       {/* About */}
       <section id="sobre" className="py-24 px-8 bg-[#F5F2EC]">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <div className="space-y-6">
-            <h2 className="font-serif text-4xl text-[#3B0B12]">Por que escolher a Zentare Engenharia?</h2>
-            <p className="text-lg text-[#151515]/80 leading-relaxed">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="space-y-6 order-2 lg:order-1">
+            <h2 className="font-serif text-3xl md:text-4xl text-[#3B0B12]">Por que escolher a Zentare Engenharia?</h2>
+            <p className="text-base md:text-lg text-[#151515]/80 leading-relaxed">
               A Zentare Engenharia é uma marca de atuação profissional fundada pela <strong>Eng.ª Civil Jaqueline Santos</strong>, dedicada à prestação de serviços de engenharia com responsabilidade técnica, ética e qualidade.
             </p>
-            <p className="text-lg text-[#151515]/80 leading-relaxed">
+            <p className="text-base md:text-lg text-[#151515]/80 leading-relaxed">
               Especializada em vistorias técnicas, laudos de engenharia, inspeções prediais, acompanhamento de obras, emissão de ART e regularização de imóveis, oferece soluções seguras e personalizadas para construtoras, condomínios, empresas e clientes particulares.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-4 h-full">
-            <div className="aspect-[3/4] rounded-lg overflow-hidden shadow-2xl">
-              <img src={engJaqueline.url} alt="Eng.ª Civil Jaqueline Santos" className="w-full h-full object-cover" />
-            </div>
-            <div className="aspect-[3/4] rounded-lg overflow-hidden shadow-2xl mt-12">
-              <img src={engWork.url} alt="Eng.ª Civil Jaqueline Santos em campo" className="w-full h-full object-cover" />
+          <div className="order-1 lg:order-2">
+            <div className="grid grid-cols-2 gap-3 md:gap-4 h-full">
+              <div className="aspect-[3/4] rounded-lg overflow-hidden shadow-xl md:shadow-2xl">
+                <img src={engJaqueline.url} alt="Eng.ª Civil Jaqueline Santos" className="w-full h-full object-cover" />
+              </div>
+              <div className="aspect-[3/4] rounded-lg overflow-hidden shadow-xl md:shadow-2xl mt-8 md:mt-12">
+                <img src={engWork.url} alt="Eng.ª Civil Jaqueline Santos em campo" className="w-full h-full object-cover" />
+              </div>
             </div>
           </div>
         </div>
@@ -87,7 +101,7 @@ function Index() {
       <section className="py-24 px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-serif text-4xl text-[#3B0B12] mb-16 text-center">Engenharia baseada em confiança, precisão e responsabilidade.</h2>
-          <div className="grid md:grid-cols-3 gap-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
             {[
               { 
                 title: "Excelência Técnica", 
@@ -105,12 +119,12 @@ function Index() {
                 icon: Award
               },
             ].map((d, i) => (
-              <div key={i} className="text-center group">
-                <div className="w-20 h-20 bg-[#3B0B12]/5 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-[#C9A24A]/10 transition-colors">
-                  <d.icon className="w-10 h-10 text-[#C9A24A]" />
+              <div key={i} className="text-center group p-6 rounded-xl hover:bg-[#3B0B12]/5 transition-colors">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-[#3B0B12]/5 rounded-full flex items-center justify-center mx-auto mb-6 md:mb-8 group-hover:bg-[#C9A24A]/10 transition-colors">
+                  <d.icon className="w-8 h-8 md:w-10 md:h-10 text-[#C9A24A]" />
                 </div>
-                <h3 className="font-serif text-2xl text-[#3B0B12] mb-4">{d.title}</h3>
-                <p className="text-[#151515]/70 leading-relaxed">{d.desc}</p>
+                <h3 className="font-serif text-xl md:text-2xl text-[#3B0B12] mb-4">{d.title}</h3>
+                <p className="text-[#151515]/70 leading-relaxed text-sm md:text-base">{d.desc}</p>
               </div>
             ))}
           </div>
@@ -122,7 +136,7 @@ function Index() {
         <div className="max-w-6xl mx-auto">
           <h2 className="font-serif text-4xl text-[#3B0B12] mb-6 text-center">Soluções técnicas para cada necessidade</h2>
           <p className="text-center text-lg mb-16 max-w-2xl mx-auto text-[#151515]/70">Conte com a Zentare Engenharia para avaliações, vistorias, laudos e acompanhamento técnico com segurança e responsabilidade profissional.</p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {[
               { title: "Laudo para Perícias Judiciais", desc: "Perícias com imparcialidade, para resolução de litígios de forma justa, técnica e clara.", icon: FileCheck },
               { title: "Vistoria Técnica de Imóveis", desc: "Identificação de condições, falhas e não conformidades para segurança e preservação.", icon: Building2 },
@@ -131,11 +145,11 @@ function Index() {
               { title: "ART", desc: "Emissão de documentação para formalizar a responsabilidade profissional.", icon: Award },
               { title: "Acompanhamento de Obras", desc: "Verificação de execução, qualidade e conformidade com normas.", icon: HardHat },
             ].map((s) => (
-              <div key={s.title} className="p-8 border border-[#3B0B12]/10 hover:shadow-xl transition-all duration-300 group bg-white">
-                <s.icon className="w-12 h-12 text-[#C9A24A] mb-6" />
-                <h3 className="font-serif text-xl text-[#3B0B12] mb-4">{s.title}</h3>
-                <p className="text-[#151515]/70 mb-6">{s.desc}</p>
-                <a href={WHATSAPP_LINK} className="inline-flex items-center text-[#3B0B12] font-bold border-b border-[#C9A24A] hover:text-[#C9A24A]">
+              <div key={s.title} className="p-6 md:p-8 border border-[#3B0B12]/10 hover:shadow-xl transition-all duration-300 group bg-white flex flex-col h-full">
+                <s.icon className="w-10 h-10 md:w-12 md:h-12 text-[#C9A24A] mb-6" />
+                <h3 className="font-serif text-lg md:text-xl text-[#3B0B12] mb-4">{s.title}</h3>
+                <p className="text-sm md:text-base text-[#151515]/70 mb-6 flex-grow">{s.desc}</p>
+                <a href={WHATSAPP_LINK} className="inline-flex items-center text-[#3B0B12] font-bold border-b border-[#C9A24A] hover:text-[#C9A24A] w-max text-sm md:text-base">
                   Solicitar orçamento <ArrowRight className="ml-2 w-4 h-4" />
                 </a>
               </div>
@@ -189,20 +203,20 @@ function Index() {
                         ]
                     },
                 ].map((p, i) => (
-                    <div key={i} className={`p-8 rounded-lg border bg-white flex flex-col h-full ${p.popular ? "border-[#C9A24A] shadow-2xl md:scale-105 z-10" : "border-[#3B0B12]/10"}`}>
-                        {p.popular && <span className="bg-[#C9A24A] text-[#3B0B12] px-3 py-1 rounded text-xs font-bold uppercase mb-4 block w-max">MAIS CONTRATADO</span>}
-                        <h3 className="text-xl font-bold text-[#3B0B12] mb-2">{p.title}</h3>
-                        <p className="text-[#151515]/70 text-sm mb-6 min-h-[40px]">{p.desc}</p>
-                        <p className="text-4xl font-serif text-[#3B0B12] font-bold mb-6">R$ {p.price}</p>
+                    <div key={i} className={`p-6 md:p-8 rounded-lg border bg-white flex flex-col h-full transition-all duration-300 ${p.popular ? "border-[#C9A24A] shadow-2xl lg:scale-105 z-10" : "border-[#3B0B12]/10"}`}>
+                        {p.popular && <span className="bg-[#C9A24A] text-[#3B0B12] px-3 py-1 rounded text-[10px] md:text-xs font-bold uppercase mb-4 block w-max mx-auto lg:mx-0">MAIS CONTRATADO</span>}
+                        <h3 className="text-lg md:text-xl font-bold text-[#3B0B12] mb-2">{p.title}</h3>
+                        <p className="text-[#151515]/70 text-xs md:text-sm mb-6 min-h-[40px]">{p.desc}</p>
+                        <p className="text-3xl md:text-4xl font-serif text-[#3B0B12] font-bold mb-6">R$ {p.price}</p>
                         <ul className="space-y-3 mb-8 flex-grow">
                             {p.items.map((item, idx) => (
-                                <li key={idx} className="flex gap-2 text-sm text-[#151515]/80">
+                                <li key={idx} className="flex gap-2 text-xs md:text-sm text-[#151515]/80">
                                     <CheckCircle2 className="w-4 h-4 text-[#C9A24A] shrink-0 mt-0.5" />
                                     <span>{item}</span>
                                 </li>
                             ))}
                         </ul>
-                        <a href={WHATSAPP_LINK} className={`block text-center py-4 rounded font-bold transition-colors ${p.popular ? "bg-[#C9A24A] text-[#3B0B12] hover:bg-[#E4C878]" : "border border-[#3B0B12] text-[#3B0B12] hover:bg-[#3B0B12] hover:text-white"}`}>Solicitar orçamento</a>
+                        <a href={WHATSAPP_LINK} className={`block text-center py-3 md:py-4 rounded font-bold transition-all text-sm md:text-base ${p.popular ? "bg-[#C9A24A] text-[#3B0B12] hover:bg-[#E4C878] hover:scale-[1.02]" : "border border-[#3B0B12] text-[#3B0B12] hover:bg-[#3B0B12] hover:text-white hover:scale-[1.02]"}`}>Solicitar orçamento</a>
                     </div>
                 ))}
             </div>
@@ -220,21 +234,21 @@ function Index() {
 
       {/* Footer */}
       <footer id="contato" className="bg-[#151515] text-[#F5F2EC] py-16 px-8">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-12">
-            <div className="col-span-2">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+            <div className="sm:col-span-2">
                 <h3 className="font-serif text-2xl text-[#C9A24A] mb-4 uppercase tracking-wider">ZENTARE ENGENHARIA</h3>
                 <p className="text-[#F5F2EC]/90 mb-2 font-bold text-lg">Eng.ª Civil Jaqueline Santos</p>
-                <p className="text-[#F5F2EC]/60 max-w-sm">Soluções em engenharia com responsabilidade técnica, precisão e compromisso.</p>
+                <p className="text-[#F5F2EC]/60 max-w-sm text-sm leading-relaxed">Soluções em engenharia com responsabilidade técnica, precisão e compromisso.</p>
             </div>
             <div>
-                <h4 className="text-[#C9A24A] font-bold mb-6 uppercase tracking-widest text-sm">Navegação</h4>
-                <ul className="space-y-4 text-[#F5F2EC]/60">
-                    {["Início", "Sobre", "Serviços", "Pacotes", "Contato"].map(i => <li key={i}><a href={`#${i.toLowerCase()}`}>{i}</a></li>)}
+                <h4 className="text-[#C9A24A] font-bold mb-6 uppercase tracking-widest text-xs">Navegação</h4>
+                <ul className="space-y-3 text-[#F5F2EC]/60 text-sm">
+                    {["Início", "Sobre", "Serviços", "Pacotes", "Contato"].map(i => <li key={i}><a href={`#${i.toLowerCase()}`} className="hover:text-[#C9A24A] transition-colors">{i}</a></li>)}
                 </ul>
             </div>
             <div>
-                <h4 className="text-[#C9A24A] font-bold mb-6 uppercase tracking-widest text-sm">Contato</h4>
-                <a href={WHATSAPP_LINK} className="inline-flex items-center gap-2 text-[#C9A24A] font-bold">
+                <h4 className="text-[#C9A24A] font-bold mb-6 uppercase tracking-widest text-xs">Contato</h4>
+                <a href={WHATSAPP_LINK} className="inline-flex items-center gap-2 text-[#C9A24A] font-bold hover:underline">
                     <MessageCircle className="w-4 h-4" /> WhatsApp
                 </a>
             </div>
