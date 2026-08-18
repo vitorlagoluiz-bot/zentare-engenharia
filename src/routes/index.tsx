@@ -16,7 +16,7 @@ function Index() {
     <div className="min-h-screen bg-[#F5F2EC] font-sans text-[#151515]">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-6 md:px-12 py-3 md:py-4 transition-all duration-300 bg-white/95 backdrop-blur-md border-b border-[#3B0B12]/10 text-[#151515]">
-        <img src={zentareLogo.url} alt="Zentare Engenharia" className="h-8 md:h-10 w-auto object-contain" />
+        <img src={zentareLogo.url} alt="Zentare Engenharia" className="h-7 sm:h-8 md:h-10 w-auto object-contain shrink-0" />
         <nav className="hidden lg:flex items-center gap-6 md:gap-8 text-xs md:text-sm font-medium tracking-wide uppercase">
           {["Início", "Sobre", "Serviços", "Pacotes", "Contato"].map((item) => (
             <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-[#3B0B12] transition-colors relative group whitespace-nowrap">
