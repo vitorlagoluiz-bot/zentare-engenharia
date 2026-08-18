@@ -232,21 +232,21 @@ function Index() {
 
       {/* Footer */}
       <footer id="contato" className="bg-[#151515] text-[#F5F2EC] py-16 px-8">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-12">
-            <div className="col-span-2">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+            <div className="sm:col-span-2">
                 <h3 className="font-serif text-2xl text-[#C9A24A] mb-4 uppercase tracking-wider">ZENTARE ENGENHARIA</h3>
                 <p className="text-[#F5F2EC]/90 mb-2 font-bold text-lg">Eng.ª Civil Jaqueline Santos</p>
-                <p className="text-[#F5F2EC]/60 max-w-sm">Soluções em engenharia com responsabilidade técnica, precisão e compromisso.</p>
+                <p className="text-[#F5F2EC]/60 max-w-sm text-sm leading-relaxed">Soluções em engenharia com responsabilidade técnica, precisão e compromisso.</p>
             </div>
             <div>
-                <h4 className="text-[#C9A24A] font-bold mb-6 uppercase tracking-widest text-sm">Navegação</h4>
-                <ul className="space-y-4 text-[#F5F2EC]/60">
-                    {["Início", "Sobre", "Serviços", "Pacotes", "Contato"].map(i => <li key={i}><a href={`#${i.toLowerCase()}`}>{i}</a></li>)}
+                <h4 className="text-[#C9A24A] font-bold mb-6 uppercase tracking-widest text-xs">Navegação</h4>
+                <ul className="space-y-3 text-[#F5F2EC]/60 text-sm">
+                    {["Início", "Sobre", "Serviços", "Pacotes", "Contato"].map(i => <li key={i}><a href={`#${i.toLowerCase()}`} className="hover:text-[#C9A24A] transition-colors">{i}</a></li>)}
                 </ul>
             </div>
             <div>
-                <h4 className="text-[#C9A24A] font-bold mb-6 uppercase tracking-widest text-sm">Contato</h4>
-                <a href={WHATSAPP_LINK} className="inline-flex items-center gap-2 text-[#C9A24A] font-bold">
+                <h4 className="text-[#C9A24A] font-bold mb-6 uppercase tracking-widest text-xs">Contato</h4>
+                <a href={WHATSAPP_LINK} className="inline-flex items-center gap-2 text-[#C9A24A] font-bold hover:underline">
                     <MessageCircle className="w-4 h-4" /> WhatsApp
                 </a>
             </div>
