@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { ArrowRight, Building2, ShieldCheck, FileCheck, ClipboardList, HardHat, Award, MessageCircle } from "lucide-react";
+import { ArrowRight, Building2, ShieldCheck, FileCheck, ClipboardList, HardHat, Award, MessageCircle, CheckCircle2 } from "lucide-react";
 import zentareLogo from "@/assets/zentare-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
