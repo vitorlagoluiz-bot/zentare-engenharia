@@ -99,7 +99,7 @@ function Index() {
               <h2 className="font-serif text-4xl text-zentare-bordeaux mb-6">Expertise em Diversos Setores</h2>
               <p className="text-lg text-zentare-graphite/70">Nossa atuação abrange desde condomínios residenciais até grandes complexos industriais, sempre com o mesmo rigor técnico.</p>
             </div>
-            <button className="border-2 border-zentare-bordeaux text-zentare-bordeaux px-8 py-3 font-bold hover:bg-zentare-bordeaux hover:text-white transition-all">VER TODOS OS PROJETOS</button>
+            
           </div>
           
           <div className="grid md:grid-cols-3 gap-6">
