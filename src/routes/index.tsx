@@ -73,8 +73,42 @@ function Index() {
         </div>
       </section>
 
+      {/* Diferenciais */}
+      <section className="py-24 px-8 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-serif text-4xl text-[#3B0B12] mb-16 text-center">Engenharia baseada em confiança, precisão e responsabilidade.</h2>
+          <div className="grid md:grid-cols-3 gap-12">
+            {[
+              { 
+                title: "Excelência Técnica", 
+                desc: "Realizamos inspeções detalhadas com critérios técnicos e responsabilidade profissional, oferecendo diagnósticos confiáveis para proteger o seu patrimônio.",
+                icon: ShieldCheck
+              },
+              { 
+                title: "Confiabilidade", 
+                desc: "Atuamos com transparência, precisão e responsabilidade em cada etapa do serviço, entregando informações técnicas claras para apoiar decisões importantes.",
+                icon: CheckCircle2
+              },
+              { 
+                title: "Compromisso", 
+                desc: "Nosso compromisso é com a qualidade e a satisfação de nossos clientes. Na Zentare Engenharia, estamos sempre prontos para enfrentar novos desafios e buscar as melhores soluções para cada caso.",
+                icon: Award
+              },
+            ].map((d, i) => (
+              <div key={i} className="text-center group">
+                <div className="w-20 h-20 bg-[#3B0B12]/5 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-[#C9A24A]/10 transition-colors">
+                  <d.icon className="w-10 h-10 text-[#C9A24A]" />
+                </div>
+                <h3 className="font-serif text-2xl text-[#3B0B12] mb-4">{d.title}</h3>
+                <p className="text-[#151515]/70 leading-relaxed">{d.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Serviços */}
-      <section id="serviços" className="py-24 px-8 bg-white">
+      <section id="serviços" className="py-24 px-8 bg-[#F5F2EC]">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-serif text-4xl text-[#3B0B12] mb-6 text-center">Soluções técnicas para cada necessidade</h2>
           <p className="text-center text-lg mb-16 max-w-2xl mx-auto text-[#151515]/70">Conte com a Zentare Engenharia para avaliações, vistorias, laudos e acompanhamento técnico com segurança e responsabilidade profissional.</p>
