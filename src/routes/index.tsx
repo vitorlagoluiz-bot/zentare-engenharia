@@ -141,16 +141,58 @@ function Index() {
             <p className="text-center text-lg mb-16 text-[#151515]/70">Atendimento para apartamentos de até 50 m². Para maiores áreas, solicite orçamento personalizado.</p>
             <div className="grid md:grid-cols-3 gap-8 items-end">
                 {[
-                    { title: "Básico", price: "320", desc: "Verificação detalhada do escopo geral, relatório completo, sem ART." },
-                    { title: "Premium", price: "420", desc: "Vistoria completa, laudo técnico, fotos, apontamento de falhas, inclusão de ART.", popular: true },
-                    { title: "Premium Plus", price: "500", desc: "Tudo do Premium + avaliação do memorial descritivo da construtora + 1 revisita técnica." },
+                    { 
+                        title: "PACOTE BÁSICO", 
+                        price: "320", 
+                        desc: "Verificação detalhada do escopo geral",
+                        items: [
+                            "Verificação completa e detalhada do escopo geral",
+                            "Relatório técnico completo",
+                            "Não inclui emissão de ART/RRT"
+                        ]
+                    },
+                    { 
+                        title: "PACOTE PREMIUM", 
+                        price: "420", 
+                        desc: "Verificação técnica detalhada de patologias e condições gerais",
+                        popular: true,
+                        items: [
+                            "Vistoria técnica completa da unidade",
+                            "Relatório técnico detalhado com registro fotográfico",
+                            "Laudo técnico completo",
+                            "Apontamento das não conformidades identificadas",
+                            "Emissão de ART / responsabilidade técnica"
+                        ]
+                    },
+                    { 
+                        title: "PACOTE PREMIUM PLUS", 
+                        price: "500", 
+                        desc: "Verificação técnica completa, com análise adicional e revisita",
+                        items: [
+                            "Avaliação do memorial descritivo da construtora",
+                            "Vistoria técnica completa da unidade",
+                            "Relatório técnico detalhado com registro fotográfico",
+                            "Laudo técnico completo",
+                            "Apontamento das não conformidades identificadas",
+                            "Emissão de ART / responsabilidade técnica",
+                            "Em caso de reprovação da unidade, 1 revisita técnica incluída"
+                        ]
+                    },
                 ].map((p, i) => (
-                    <div key={i} className={`p-8 rounded-lg border bg-white ${p.popular ? "border-[#C9A24A] shadow-2xl scale-105" : "border-[#3B0B12]/10"}`}>
-                        {p.popular && <span className="bg-[#C9A24A] text-[#3B0B12] px-3 py-1 rounded text-xs font-bold uppercase mb-4 block w-max">Mais contratado</span>}
-                        <h3 className="text-2xl font-serif text-[#3B0B12] mb-2">{p.title}</h3>
-                        <p className="text-[#151515]/70 text-sm mb-6 min-h-[60px]">{p.desc}</p>
+                    <div key={i} className={`p-8 rounded-lg border bg-white flex flex-col h-full ${p.popular ? "border-[#C9A24A] shadow-2xl md:scale-105 z-10" : "border-[#3B0B12]/10"}`}>
+                        {p.popular && <span className="bg-[#C9A24A] text-[#3B0B12] px-3 py-1 rounded text-xs font-bold uppercase mb-4 block w-max">MAIS CONTRATADO</span>}
+                        <h3 className="text-xl font-bold text-[#3B0B12] mb-2">{p.title}</h3>
+                        <p className="text-[#151515]/70 text-sm mb-6 min-h-[40px]">{p.desc}</p>
                         <p className="text-4xl font-serif text-[#3B0B12] font-bold mb-6">R$ {p.price}</p>
-                        <a href={WHATSAPP_LINK} className={`block text-center py-3 rounded font-bold ${p.popular ? "bg-[#3B0B12] text-white" : "border border-[#3B0B12] text-[#3B0B12]"}`}>Solicitar orçamento</a>
+                        <ul className="space-y-3 mb-8 flex-grow">
+                            {p.items.map((item, idx) => (
+                                <li key={idx} className="flex gap-2 text-sm text-[#151515]/80">
+                                    <CheckCircle2 className="w-4 h-4 text-[#C9A24A] shrink-0 mt-0.5" />
+                                    <span>{item}</span>
+                                </li>
+                            ))}
+                        </ul>
+                        <a href={WHATSAPP_LINK} className={`block text-center py-4 rounded font-bold transition-colors ${p.popular ? "bg-[#C9A24A] text-[#3B0B12] hover:bg-[#E4C878]" : "border border-[#3B0B12] text-[#3B0B12] hover:bg-[#3B0B12] hover:text-white"}`}>Solicitar orçamento</a>
                     </div>
                 ))}
             </div>
