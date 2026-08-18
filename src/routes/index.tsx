@@ -122,20 +122,73 @@ function Index() {
         </div>
       </section>
 
-      {/* Diferenciais / Valores */}
-      <section className="py-24 px-8 bg-zentare-offwhite border-t border-b border-zentare-gold/20">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-12 text-center">
-          {[
-            { title: "Missão", desc: "Prover segurança jurídica e técnica através de engenharia de diagnóstico de alta precisão." },
-            { title: "Visão", desc: "Ser a principal referência em perícias e laudos técnicos sofisticados no território nacional." },
-            { title: "Valores", desc: "Ética inegociável, precisão técnica absoluta e compromisso com a verdade pericial." },
-            { title: "Qualidade", desc: "Certificação em processos de inspeção rigorosos para resultados indiscutíveis." },
-          ].map((v) => (
-            <div key={v.title}>
-              <h3 className="font-serif text-xl text-zentare-gold uppercase tracking-widest mb-4">{v.title}</h3>
-              <p className="text-sm text-zentare-graphite/80 leading-relaxed">{v.desc}</p>
-            </div>
-          ))}
+      {/* Diferenciais / Por que escolher a Zentare */}
+      <section className="py-24 px-8 bg-zentare-bordeaux-dark text-zentare-offwhite">
+        <div className="max-w-6xl mx-auto text-center">
+          <p className="tracking-[0.2em] uppercase text-xs mb-4 text-zentare-gold/80">Nossos Diferenciais</p>
+          <h2 className="font-serif text-4xl mb-16">Por que Escolher a Zentare Engenharia?</h2>
+          
+          <div className="grid md:grid-cols-4 gap-8">
+            {[
+              { 
+                title: "Conformidade Ambiental", 
+                desc: "Garantimos aderência estrita às regulamentações e normas ambientais, assegurando a sustentabilidade de cada projeto.",
+                icon: (
+                  <div className="w-16 h-16 bg-zentare-bordeaux rounded-full flex items-center justify-center mx-auto mb-6 border border-zentare-gold/30">
+                    <svg viewBox="0 0 24 24" className="w-8 h-8 text-zentare-gold" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <path d="M12 2L4.5 9c0 0 0 4 2 6s5.5 3 5.5 3 3.5-1 5.5-3 2-6 2-6L12 2z" />
+                      <path d="M12 22V12" />
+                      <path d="M12 12l4-4" />
+                      <path d="M12 15l-3-3" />
+                    </svg>
+                  </div>
+                )
+              },
+              { 
+                title: "Gestão de Impactos", 
+                desc: "Avaliamos e reportamos os impactos dos projetos na vizinhança, priorizando a transparência e o relacionamento com a comunidade.",
+                icon: (
+                  <div className="w-16 h-16 bg-zentare-bordeaux rounded-full flex items-center justify-center mx-auto mb-6 border border-zentare-gold/30">
+                    <svg viewBox="0 0 24 24" className="w-8 h-8 text-zentare-gold" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <path d="M3 3v18h18" />
+                      <path d="M7 16l4-4 4 4 4-8" />
+                    </svg>
+                  </div>
+                )
+              },
+              { 
+                title: "Simplificação Burocrática", 
+                desc: "Navegamos pela complexidade burocrática, obtendo permissões e relatórios de forma eficiente para garantir a fluidez do processo.",
+                icon: (
+                  <div className="w-16 h-16 bg-zentare-bordeaux rounded-full flex items-center justify-center mx-auto mb-6 border border-zentare-gold/30">
+                    <svg viewBox="0 0 24 24" className="w-8 h-8 text-zentare-gold" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                      <circle cx="12" cy="12" r="3" />
+                    </svg>
+                  </div>
+                )
+              },
+              { 
+                title: "Otimização de Tempo e Custos", 
+                desc: "Evitamos atrasos e garantimos a entrega de laudos e relatórios no prazo, minimizando custos adicionais para nossos clientes.",
+                icon: (
+                  <div className="w-16 h-16 bg-zentare-bordeaux rounded-full flex items-center justify-center mx-auto mb-6 border border-zentare-gold/30">
+                    <svg viewBox="0 0 24 24" className="w-8 h-8 text-zentare-gold" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M12 6v6l4 2" />
+                      <path d="M12 17h.01" />
+                    </svg>
+                  </div>
+                )
+              }
+            ].map((d, i) => (
+              <div key={i} className="group">
+                {d.icon}
+                <h3 className="font-serif text-xl mb-4 group-hover:text-zentare-gold transition-colors">{d.title}</h3>
+                <p className="text-sm text-zentare-offwhite/60 leading-relaxed">{d.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
