@@ -134,7 +134,7 @@ function Index() {
         <div className="max-w-6xl mx-auto">
           <h2 className="font-serif text-4xl text-[#3B0B12] mb-6 text-center">Soluções técnicas para cada necessidade</h2>
           <p className="text-center text-lg mb-16 max-w-2xl mx-auto text-[#151515]/70">Conte com a Zentare Engenharia para avaliações, vistorias, laudos e acompanhamento técnico com segurança e responsabilidade profissional.</p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {[
               { title: "Laudo para Perícias Judiciais", desc: "Perícias com imparcialidade, para resolução de litígios de forma justa, técnica e clara.", icon: FileCheck },
               { title: "Vistoria Técnica de Imóveis", desc: "Identificação de condições, falhas e não conformidades para segurança e preservação.", icon: Building2 },
@@ -143,11 +143,11 @@ function Index() {
               { title: "ART", desc: "Emissão de documentação para formalizar a responsabilidade profissional.", icon: Award },
               { title: "Acompanhamento de Obras", desc: "Verificação de execução, qualidade e conformidade com normas.", icon: HardHat },
             ].map((s) => (
-              <div key={s.title} className="p-8 border border-[#3B0B12]/10 hover:shadow-xl transition-all duration-300 group bg-white">
-                <s.icon className="w-12 h-12 text-[#C9A24A] mb-6" />
-                <h3 className="font-serif text-xl text-[#3B0B12] mb-4">{s.title}</h3>
-                <p className="text-[#151515]/70 mb-6">{s.desc}</p>
-                <a href={WHATSAPP_LINK} className="inline-flex items-center text-[#3B0B12] font-bold border-b border-[#C9A24A] hover:text-[#C9A24A]">
+              <div key={s.title} className="p-6 md:p-8 border border-[#3B0B12]/10 hover:shadow-xl transition-all duration-300 group bg-white flex flex-col h-full">
+                <s.icon className="w-10 h-10 md:w-12 md:h-12 text-[#C9A24A] mb-6" />
+                <h3 className="font-serif text-lg md:text-xl text-[#3B0B12] mb-4">{s.title}</h3>
+                <p className="text-sm md:text-base text-[#151515]/70 mb-6 flex-grow">{s.desc}</p>
+                <a href={WHATSAPP_LINK} className="inline-flex items-center text-[#3B0B12] font-bold border-b border-[#C9A24A] hover:text-[#C9A24A] w-max text-sm md:text-base">
                   Solicitar orçamento <ArrowRight className="ml-2 w-4 h-4" />
                 </a>
               </div>
