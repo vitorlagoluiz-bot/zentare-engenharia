@@ -1,89 +1,132 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
+import { ArrowRight, Building2, ShieldCheck, FileCheck, ClipboardList, HardHat, Award, MessageCircle, CheckCircle2 } from "lucide-react";
 import zentareLogo from "@/assets/zentare-logo.png.asset.json";
-import { ArrowRight, Building2, ShieldCheck, FileCheck, ClipboardList, HardHat } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   component: Index,
 });
 
 function Index() {
+  const WHATSAPP_LINK = "https://wa.me/5511918579184";
+
   return (
-    <div className="min-h-screen bg-zentare-offwhite font-sans text-zentare-graphite">
+    <div className="min-h-screen bg-[#F5F2EC] font-sans text-[#151515]">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 transition-all duration-300 bg-zentare-bordeaux/90 text-zentare-offwhite">
-        <img src={zentareLogo.url} alt="Zentare Engenharia" className="h-12 w-auto" />
-        <nav className="flex items-center gap-8 text-sm font-medium tracking-wide uppercase">
-          {["Início", "Quem Somos", "Serviços", "Contato"].map((item) => (
-            <a key={item} href="#" className="hover:text-zentare-gold transition-colors">{item}</a>
+      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 transition-all duration-300 bg-[#3B0B12]/95 text-[#F5F2EC]">
+        <img src={zentareLogo.url} alt="Zentare Engenharia" className="h-10 w-auto" />
+        <nav className="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide uppercase">
+          {["Início", "Sobre", "Serviços", "Pacotes", "Contato"].map((item) => (
+            <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-[#C9A24A] transition-colors">{item}</a>
           ))}
-          <button className="bg-zentare-gold text-zentare-bordeaux px-6 py-3 rounded font-bold hover:bg-zentare-gold-light transition-colors">
+          <a href={WHATSAPP_LINK} className="bg-[#C9A24A] text-[#3B0B12] px-6 py-2.5 rounded font-bold hover:bg-[#E4C878] transition-colors">
             SOLICITAR ORÇAMENTO
-          </button>
+          </a>
         </nav>
       </header>
 
       {/* Hero */}
       <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2000')] bg-cover bg-center" />
-        <div className="absolute inset-0 bg-zentare-bordeaux/85 mix-blend-multiply" />
-        <div className="relative z-10 text-center px-4 max-w-4xl text-zentare-offwhite">
-          <p className="tracking-[0.2em] uppercase text-sm mb-4 text-zentare-gold">ENGENHARIA • PRECISÃO • CONFIANÇA</p>
-          <h1 className="font-serif text-5xl md:text-7xl mb-6 leading-tight">Engenharia técnica que transforma conhecimento em segurança.</h1>
-          <p className="text-xl mb-10 text-zentare-offwhite/90">Soluções especializadas em perícias, laudos, vistorias e inspeções técnicas para obras, edificações e condomínios.</p>
-          <div className="flex gap-4 justify-center">
-            <button className="bg-zentare-gold text-zentare-bordeaux px-8 py-4 rounded font-bold hover:bg-zentare-gold-light transition-colors">SOLICITAR ORÇAMENTO</button>
-            <button className="border border-zentare-offwhite px-8 py-4 rounded font-bold hover:bg-zentare-offwhite hover:text-zentare-bordeaux transition-colors">CONHEÇA A ZENTARE</button>
+        <div className="absolute inset-0 bg-[#3B0B12]/90 mix-blend-multiply" />
+        <div className="relative z-10 text-center px-4 max-w-5xl text-[#F5F2EC]">
+          <h1 className="font-serif text-5xl md:text-8xl mb-8 leading-tight">Engenharia que transforma análise técnica em segurança para o seu patrimônio.</h1>
+          <p className="text-xl md:text-2xl mb-12 text-[#F5F2EC]/90 max-w-3xl mx-auto">Vistorias, laudos, inspeções, acompanhamento de obras e soluções técnicas com responsabilidade profissional.</p>
+          <div className="flex gap-4 justify-center flex-col md:flex-row">
+            <a href={WHATSAPP_LINK} className="bg-[#C9A24A] text-[#3B0B12] px-10 py-4 rounded font-bold hover:bg-[#E4C878] transition-colors text-lg uppercase tracking-wider">Solicitar orçamento</a>
+            <a href="#serviços" className="border border-[#F5F2EC] px-10 py-4 rounded font-bold hover:bg-[#F5F2EC] hover:text-[#3B0B12] transition-colors text-lg uppercase tracking-wider">Conheça nossos serviços</a>
           </div>
         </div>
       </section>
 
-      {/* Quem Somos */}
-      <section className="py-24 px-8 bg-white">
+      {/* Authority Bar */}
+      <section className="py-16 bg-[#151515] text-[#F5F2EC]">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+          {[
+            { n: "+8 anos", t: "de experiência" },
+            { n: "+500", t: "vistorias concluídas" },
+            { n: "+200", t: "projetos em andamento" },
+          ].map((item, i) => (
+            <div key={i}>
+              <p className="text-5xl font-serif text-[#C9A24A] font-bold mb-2">{item.n}</p>
+              <p className="uppercase tracking-widest text-sm text-[#F5F2EC]/70">{item.t}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* About */}
+      <section id="sobre" className="py-24 px-8 bg-[#F5F2EC]">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div className="space-y-6">
-            <div className="h-1 w-16 bg-zentare-gold" />
-            <h2 className="font-serif text-4xl text-zentare-bordeaux">Experiência, precisão e confiança em cada laudo.</h2>
-            <p className="text-lg text-zentare-graphite/80 leading-relaxed">
-              A Zentare Engenharia destaca-se pela excelência técnica em perícias, inspeções e laudos. Nossa metodologia combina rigor científico e vasta experiência de mercado para oferecer soluções seguras e precisas para cada edificação.
+            <h2 className="font-serif text-4xl text-[#3B0B12]">Por que escolher a Zentare Engenharia?</h2>
+            <p className="text-lg text-[#151515]/80 leading-relaxed">
+              A Zentare Engenharia é uma marca de atuação profissional fundada pela <strong>Eng.ª Civil Jaqueline Santos</strong>, dedicada à prestação de serviços de engenharia com responsabilidade técnica, ética e qualidade.
             </p>
-            <div className="grid grid-cols-2 gap-6 pt-4">
-              <div className="border-l-4 border-zentare-gold pl-4">
-                <p className="text-3xl font-serif text-zentare-bordeaux font-bold">10+</p>
-                <p className="text-sm uppercase tracking-wider text-zentare-graphite">Anos de atuação</p>
-              </div>
-              <div className="border-l-4 border-zentare-gold pl-4">
-                <p className="text-3xl font-serif text-zentare-bordeaux font-bold">500+</p>
-                <p className="text-sm uppercase tracking-wider text-zentare-graphite">Laudos emitidos</p>
-              </div>
-            </div>
+            <p className="text-lg text-[#151515]/80 leading-relaxed">
+              Especializada em vistorias técnicas, laudos de engenharia, inspeções prediais, acompanhamento de obras, emissão de ART e regularização de imóveis, oferece soluções seguras e personalizadas para construtoras, condomínios, empresas e clientes particulares.
+            </p>
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            <img src="https://images.unsplash.com/photo-1503387762-592bae58abda?q=80&w=800" alt="Engenharia" className="w-full h-64 object-cover" />
-            <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=800" alt="Perícia" className="w-full h-64 object-cover mt-8" />
+          <div className="h-full bg-[#3B0B12]/10 aspect-video rounded-lg flex items-center justify-center">
+             <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=800" alt="Eng.ª Civil Jaqueline Santos" className="w-full h-full object-cover rounded-lg" />
+          </div>
+        </div>
+      </section>
+
+      {/* Diferenciais */}
+      <section className="py-24 px-8 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-serif text-4xl text-[#3B0B12] mb-16 text-center">Engenharia baseada em confiança, precisão e responsabilidade.</h2>
+          <div className="grid md:grid-cols-3 gap-12">
+            {[
+              { 
+                title: "Excelência Técnica", 
+                desc: "Realizamos inspeções detalhadas com critérios técnicos e responsabilidade profissional, oferecendo diagnósticos confiáveis para proteger o seu patrimônio.",
+                icon: ShieldCheck
+              },
+              { 
+                title: "Confiabilidade", 
+                desc: "Atuamos com transparência, precisão e responsabilidade em cada etapa do serviço, entregando informações técnicas claras para apoiar decisões importantes.",
+                icon: CheckCircle2
+              },
+              { 
+                title: "Compromisso", 
+                desc: "Nosso compromisso é com a qualidade e a satisfação de nossos clientes. Na Zentare Engenharia, estamos sempre prontos para enfrentar novos desafios e buscar as melhores soluções para cada caso.",
+                icon: Award
+              },
+            ].map((d, i) => (
+              <div key={i} className="text-center group">
+                <div className="w-20 h-20 bg-[#3B0B12]/5 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-[#C9A24A]/10 transition-colors">
+                  <d.icon className="w-10 h-10 text-[#C9A24A]" />
+                </div>
+                <h3 className="font-serif text-2xl text-[#3B0B12] mb-4">{d.title}</h3>
+                <p className="text-[#151515]/70 leading-relaxed">{d.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Serviços */}
-      <section className="py-24 px-8 bg-zentare-offwhite">
+      <section id="serviços" className="py-24 px-8 bg-[#F5F2EC]">
         <div className="max-w-6xl mx-auto">
-          <h2 className="font-serif text-4xl text-zentare-bordeaux mb-16 text-center">Nossos Serviços Especializados</h2>
+          <h2 className="font-serif text-4xl text-[#3B0B12] mb-6 text-center">Soluções técnicas para cada necessidade</h2>
+          <p className="text-center text-lg mb-16 max-w-2xl mx-auto text-[#151515]/70">Conte com a Zentare Engenharia para avaliações, vistorias, laudos e acompanhamento técnico com segurança e responsabilidade profissional.</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { title: "Perícias Judiciais", desc: "Suporte técnico completo para disputas e processos judiciais.", icon: Building2 },
-              { title: "Inspeção Predial", desc: "Avaliação preventiva para garantir a integridade de edificações.", icon: ShieldCheck },
-              { title: "Vistorias de Entrega", desc: "Garantia de que a obra entregue atende a todas as normas.", icon: FileCheck },
-              { title: "Laudos de Reforma", desc: "Documentação técnica para reformas seguras e legais.", icon: ClipboardList },
-              { title: "Consultoria Técnica", desc: "Assessoria especializada em engenharia para condomínios.", icon: HardHat },
-              { title: "Manutenção Preventiva", desc: "Planejamento e gestão de manutenção técnica.", icon: Building2 },
+              { title: "Laudo para Perícias Judiciais", desc: "Perícias com imparcialidade, para resolução de litígios de forma justa, técnica e clara.", icon: FileCheck },
+              { title: "Vistoria Técnica de Imóveis", desc: "Identificação de condições, falhas e não conformidades para segurança e preservação.", icon: Building2 },
+              { title: "Laudo para Avaliações", desc: "Avaliações patrimoniais precisas para decisões financeiras e administrativas.", icon: ClipboardList },
+              { title: "Inspeção Predial", desc: "Segurança, conservação e valorização para síndicos e proprietários.", icon: ShieldCheck },
+              { title: "ART", desc: "Emissão de documentação para formalizar a responsabilidade profissional.", icon: Award },
+              { title: "Acompanhamento de Obras", desc: "Verificação de execução, qualidade e conformidade com normas.", icon: HardHat },
             ].map((s) => (
-              <div key={s.title} className="p-8 bg-white border border-zentare-bordeaux/10 hover:shadow-xl transition-all duration-300 group">
-                <s.icon className="w-12 h-12 text-zentare-gold mb-6 group-hover:scale-110 transition-transform" />
-                <h3 className="font-serif text-xl text-zentare-bordeaux mb-4">{s.title}</h3>
-                <p className="text-zentare-graphite/70 mb-6">{s.desc}</p>
-                <a href="#" className="inline-flex items-center text-zentare-bordeaux font-bold border-b border-zentare-gold hover:text-zentare-gold transition-colors">
-                  SAIBA MAIS <ArrowRight className="ml-2 w-4 h-4" />
+              <div key={s.title} className="p-8 border border-[#3B0B12]/10 hover:shadow-xl transition-all duration-300 group bg-white">
+                <s.icon className="w-12 h-12 text-[#C9A24A] mb-6" />
+                <h3 className="font-serif text-xl text-[#3B0B12] mb-4">{s.title}</h3>
+                <p className="text-[#151515]/70 mb-6">{s.desc}</p>
+                <a href={WHATSAPP_LINK} className="inline-flex items-center text-[#3B0B12] font-bold border-b border-[#C9A24A] hover:text-[#C9A24A]">
+                  Solicitar orçamento <ArrowRight className="ml-2 w-4 h-4" />
                 </a>
               </div>
             ))}
@@ -91,165 +134,107 @@ function Index() {
         </div>
       </section>
 
-      {/* Portfolio / Áreas de Atuação */}
-      <section className="py-24 px-8 bg-white">
+      {/* Packages */}
+      <section id="pacotes" className="py-24 px-8 bg-[#3B0B12]/5">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-            <div className="max-w-2xl">
-              <h2 className="font-serif text-4xl text-zentare-bordeaux mb-6">Expertise em Diversos Setores</h2>
-              <p className="text-lg text-zentare-graphite/70">Nossa atuação abrange desde condomínios residenciais até grandes complexos industriais, sempre com o mesmo rigor técnico.</p>
+            <h2 className="font-serif text-4xl text-[#3B0B12] mb-2 text-center">Pacotes de Vistorias</h2>
+            <p className="text-center text-lg mb-16 text-[#151515]/70">Atendimento para apartamentos de até 50 m². Para maiores áreas, solicite orçamento personalizado.</p>
+            <div className="grid md:grid-cols-3 gap-8 items-end">
+                {[
+                    { 
+                        title: "PACOTE BÁSICO", 
+                        price: "320", 
+                        desc: "Verificação detalhada do escopo geral",
+                        items: [
+                            "Verificação completa e detalhada do escopo geral",
+                            "Relatório técnico completo",
+                            "Não inclui emissão de ART/RRT"
+                        ]
+                    },
+                    { 
+                        title: "PACOTE PREMIUM", 
+                        price: "420", 
+                        desc: "Verificação técnica detalhada de patologias e condições gerais",
+                        popular: true,
+                        items: [
+                            "Vistoria técnica completa da unidade",
+                            "Relatório técnico detalhado com registro fotográfico",
+                            "Laudo técnico completo",
+                            "Apontamento das não conformidades identificadas",
+                            "Emissão de ART / responsabilidade técnica"
+                        ]
+                    },
+                    { 
+                        title: "PACOTE PREMIUM PLUS", 
+                        price: "500", 
+                        desc: "Verificação técnica completa, com análise adicional e revisita",
+                        items: [
+                            "Avaliação do memorial descritivo da construtora",
+                            "Vistoria técnica completa da unidade",
+                            "Relatório técnico detalhado com registro fotográfico",
+                            "Laudo técnico completo",
+                            "Apontamento das não conformidades identificadas",
+                            "Emissão de ART / responsabilidade técnica",
+                            "Em caso de reprovação da unidade, 1 revisita técnica incluída"
+                        ]
+                    },
+                ].map((p, i) => (
+                    <div key={i} className={`p-8 rounded-lg border bg-white flex flex-col h-full ${p.popular ? "border-[#C9A24A] shadow-2xl md:scale-105 z-10" : "border-[#3B0B12]/10"}`}>
+                        {p.popular && <span className="bg-[#C9A24A] text-[#3B0B12] px-3 py-1 rounded text-xs font-bold uppercase mb-4 block w-max">MAIS CONTRATADO</span>}
+                        <h3 className="text-xl font-bold text-[#3B0B12] mb-2">{p.title}</h3>
+                        <p className="text-[#151515]/70 text-sm mb-6 min-h-[40px]">{p.desc}</p>
+                        <p className="text-4xl font-serif text-[#3B0B12] font-bold mb-6">R$ {p.price}</p>
+                        <ul className="space-y-3 mb-8 flex-grow">
+                            {p.items.map((item, idx) => (
+                                <li key={idx} className="flex gap-2 text-sm text-[#151515]/80">
+                                    <CheckCircle2 className="w-4 h-4 text-[#C9A24A] shrink-0 mt-0.5" />
+                                    <span>{item}</span>
+                                </li>
+                            ))}
+                        </ul>
+                        <a href={WHATSAPP_LINK} className={`block text-center py-4 rounded font-bold transition-colors ${p.popular ? "bg-[#C9A24A] text-[#3B0B12] hover:bg-[#E4C878]" : "border border-[#3B0B12] text-[#3B0B12] hover:bg-[#3B0B12] hover:text-white"}`}>Solicitar orçamento</a>
+                    </div>
+                ))}
             </div>
-            
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { title: "Condomínios Residenciais", img: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=800" },
-              { title: "Complexos Industriais", img: "https://images.unsplash.com/photo-1516937941344-00b4e0337589?q=80&w=800" },
-              { title: "Edifícios Comerciais", img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800" },
-            ].map((p, i) => (
-              <div key={i} className="relative group overflow-hidden h-96">
-                <img src={p.img} alt={p.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-zentare-bordeaux/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-8">
-                  <div className="text-center">
-                    <h3 className="text-white font-serif text-2xl mb-4">{p.title}</h3>
-                    <div className="h-0.5 w-12 bg-zentare-gold mx-auto" />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* Diferenciais / Por que escolher a Zentare */}
-      <section className="py-24 px-8 bg-zentare-bordeaux-dark text-zentare-offwhite">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="tracking-[0.2em] uppercase text-xs mb-4 text-zentare-gold/80">Nossos Diferenciais</p>
-          <h2 className="font-serif text-4xl mb-16">Por que Escolher a Zentare Engenharia?</h2>
-          
-          <div className="grid md:grid-cols-4 gap-8">
-            {[
-              { 
-                title: "Conformidade Ambiental", 
-                desc: "Garantimos aderência estrita às regulamentações e normas ambientais, assegurando a sustentabilidade de cada projeto.",
-                icon: (
-                  <div className="w-16 h-16 bg-zentare-bordeaux rounded-full flex items-center justify-center mx-auto mb-6 border border-zentare-gold/30">
-                    <svg viewBox="0 0 24 24" className="w-8 h-8 text-zentare-gold" fill="none" stroke="currentColor" strokeWidth="1.5">
-                      <path d="M12 2L4.5 9c0 0 0 4 2 6s5.5 3 5.5 3 3.5-1 5.5-3 2-6 2-6L12 2z" />
-                      <path d="M12 22V12" />
-                      <path d="M12 12l4-4" />
-                      <path d="M12 15l-3-3" />
-                    </svg>
-                  </div>
-                )
-              },
-              { 
-                title: "Gestão de Impactos", 
-                desc: "Avaliamos e reportamos os impactos dos projetos na vizinhança, priorizando a transparência e o relacionamento com a comunidade.",
-                icon: (
-                  <div className="w-16 h-16 bg-zentare-bordeaux rounded-full flex items-center justify-center mx-auto mb-6 border border-zentare-gold/30">
-                    <svg viewBox="0 0 24 24" className="w-8 h-8 text-zentare-gold" fill="none" stroke="currentColor" strokeWidth="1.5">
-                      <path d="M3 3v18h18" />
-                      <path d="M7 16l4-4 4 4 4-8" />
-                    </svg>
-                  </div>
-                )
-              },
-              { 
-                title: "Simplificação Burocrática", 
-                desc: "Navegamos pela complexidade burocrática, obtendo permissões e relatórios de forma eficiente para garantir a fluidez do processo.",
-                icon: (
-                  <div className="w-16 h-16 bg-zentare-bordeaux rounded-full flex items-center justify-center mx-auto mb-6 border border-zentare-gold/30">
-                    <svg viewBox="0 0 24 24" className="w-8 h-8 text-zentare-gold" fill="none" stroke="currentColor" strokeWidth="1.5">
-                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                      <circle cx="12" cy="12" r="3" />
-                    </svg>
-                  </div>
-                )
-              },
-              { 
-                title: "Otimização de Tempo e Custos", 
-                desc: "Evitamos atrasos e garantimos a entrega de laudos e relatórios no prazo, minimizando custos adicionais para nossos clientes.",
-                icon: (
-                  <div className="w-16 h-16 bg-zentare-bordeaux rounded-full flex items-center justify-center mx-auto mb-6 border border-zentare-gold/30">
-                    <svg viewBox="0 0 24 24" className="w-8 h-8 text-zentare-gold" fill="none" stroke="currentColor" strokeWidth="1.5">
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="M12 6v6l4 2" />
-                      <path d="M12 17h.01" />
-                    </svg>
-                  </div>
-                )
-              }
-            ].map((d, i) => (
-              <div key={i} className="group">
-                {d.icon}
-                <h3 className="font-serif text-xl mb-4 group-hover:text-zentare-gold transition-colors">{d.title}</h3>
-                <p className="text-sm text-zentare-offwhite/60 leading-relaxed">{d.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+      {/* Final CTA */}
+      <section className="py-24 bg-[#3B0B12] text-[#F5F2EC] px-8 text-center">
+        <h2 className="font-serif text-4xl mb-6">Precisa de uma avaliação técnica para o seu imóvel ou obra?</h2>
+        <p className="text-xl mb-10 opacity-90">Fale com a Zentare Engenharia e encontre a solução técnica adequada para o seu caso.</p>
+        <a href={WHATSAPP_LINK} className="inline-flex items-center gap-3 bg-[#C9A24A] text-[#3B0B12] px-10 py-4 rounded font-bold text-lg hover:bg-[#E4C878]">
+          <MessageCircle className="w-5 h-5" /> SOLICITAR ORÇAMENTO PELO WHATSAPP
+        </a>
       </section>
 
-      {/* FAQ / Dúvidas Frequentes */}
-      <section className="py-24 px-8 bg-white">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="font-serif text-4xl text-zentare-bordeaux mb-16 text-center">Dúvidas Frequentes</h2>
-          <div className="space-y-6">
-            {[
-              { q: "O que é um laudo de inspeção predial?", a: "É um documento técnico que avalia o estado geral de conservação e manutenção da edificação, identificando manifestações patológicas e riscos." },
-              { q: "Por que contratar uma perícia de engenharia?", a: "Para obter um parecer técnico isento e fundamentado, essencial em processos judiciais ou resoluções de conflitos estruturais." },
-              { q: "Qual a periodicidade da vistoria técnica?", a: "Depende da idade e do tipo da edificação, mas recomenda-se uma avaliação técnica profunda a cada 2 ou 5 anos." },
-            ].map((item, i) => (
-              <div key={i} className="border-b border-zentare-bordeaux/10 pb-6">
-                <h3 className="font-bold text-zentare-bordeaux mb-3">{item.q}</h3>
-                <p className="text-zentare-graphite/70">{item.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Footer CTA */}
-      <section className="py-24 bg-zentare-bordeaux text-zentare-offwhite px-8 text-center">
-        <h2 className="font-serif text-4xl mb-8">Pronto para garantir a segurança da sua edificação?</h2>
-        <button className="bg-zentare-gold text-zentare-bordeaux px-10 py-4 rounded font-bold hover:bg-zentare-gold-light transition-colors uppercase tracking-widest">SOLICITAR ORÇAMENTO AGORA</button>
-      </section>
-
-      {/* Real Footer */}
-      <footer className="bg-zentare-graphite text-zentare-offwhite py-16 px-8">
+      {/* Footer */}
+      <footer id="contato" className="bg-[#151515] text-[#F5F2EC] py-16 px-8">
         <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-12">
-          <div className="col-span-2">
-            <img src={zentareLogo.url} alt="Zentare Engenharia" className="h-12 w-auto mb-8 grayscale invert" />
-            <p className="max-w-md text-zentare-offwhite/60 leading-relaxed">
-              Zentare Engenharia: Especialistas em perícias, laudos e inspeções técnicas. Excelência técnica e compromisso com a segurança de edificações.
-            </p>
-          </div>
-          <div>
-            <h4 className="text-zentare-gold font-bold mb-6 uppercase tracking-widest text-sm">Navegação</h4>
-            <ul className="space-y-4 text-zentare-offwhite/60">
-              <li><a href="#" className="hover:text-zentare-gold transition-colors">Início</a></li>
-              <li><a href="#" className="hover:text-zentare-gold transition-colors">Quem Somos</a></li>
-              <li><a href="#" className="hover:text-zentare-gold transition-colors">Serviços</a></li>
-              <li><a href="#" className="hover:text-zentare-gold transition-colors">Contato</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-zentare-gold font-bold mb-6 uppercase tracking-widest text-sm">Contato</h4>
-            <ul className="space-y-4 text-zentare-offwhite/60">
-              <li>contato@zentare.eng.br</li>
-              <li>+55 (11) 99999-9999</li>
-              <li>São Paulo - SP</li>
-            </ul>
-          </div>
-        </div>
-        <div className="max-w-6xl mx-auto mt-16 pt-8 border-t border-white/10 text-center text-sm text-zentare-offwhite/40">
-          © {new Date().getFullYear()} Zentare Engenharia. Todos os direitos reservados.
+            <div className="col-span-2">
+                <h3 className="font-serif text-2xl text-[#C9A24A] mb-4 uppercase tracking-wider">ZENTARE ENGENHARIA</h3>
+                <p className="text-[#F5F2EC]/90 mb-2 font-bold text-lg">Eng.ª Civil Jaqueline Santos</p>
+                <p className="text-[#F5F2EC]/60 max-w-sm">Soluções em engenharia com responsabilidade técnica, precisão e compromisso.</p>
+            </div>
+            <div>
+                <h4 className="text-[#C9A24A] font-bold mb-6 uppercase tracking-widest text-sm">Navegação</h4>
+                <ul className="space-y-4 text-[#F5F2EC]/60">
+                    {["Início", "Sobre", "Serviços", "Pacotes", "Contato"].map(i => <li key={i}><a href={`#${i.toLowerCase()}`}>{i}</a></li>)}
+                </ul>
+            </div>
+            <div>
+                <h4 className="text-[#C9A24A] font-bold mb-6 uppercase tracking-widest text-sm">Contato</h4>
+                <a href={WHATSAPP_LINK} className="inline-flex items-center gap-2 text-[#C9A24A] font-bold">
+                    <MessageCircle className="w-4 h-4" /> WhatsApp
+                </a>
+            </div>
         </div>
       </footer>
 
-
+      {/* WhatsApp Floating */}
+      <a href={WHATSAPP_LINK} className="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform">
+        <MessageCircle className="w-8 h-8" />
+      </a>
     </div>
   );
 }
