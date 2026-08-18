@@ -207,7 +207,7 @@ function Index() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 bg-[#3B0B12] text-[#F5F2EC] px-8 text-center">
+      <section className="py-24 bg-white border-t border-[#3B0B12]/5 text-[#151515] px-8 text-center">
         <h2 className="font-serif text-4xl mb-6">Precisa de uma avaliação técnica para o seu imóvel ou obra?</h2>
         <p className="text-xl mb-10 opacity-90">Fale com a Zentare Engenharia e encontre a solução técnica adequada para o seu caso.</p>
         <a href={WHATSAPP_LINK} className="inline-flex items-center gap-3 bg-[#C9A24A] text-[#3B0B12] px-10 py-4 rounded font-bold text-lg hover:bg-[#E4C878]">
