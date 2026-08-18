@@ -30,7 +30,7 @@ function Index() {
       {/* Hero */}
       <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2000')] bg-cover bg-center" />
-        <div className="absolute inset-0 bg-[#3B0B12]/90 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#151515]/90 to-transparent" />
         <div className="relative z-10 text-center px-4 max-w-5xl text-[#F5F2EC]">
           <h1 className="font-serif text-5xl md:text-8xl mb-8 leading-tight">Engenharia que transforma análise técnica em segurança para o seu patrimônio.</h1>
           <p className="text-xl md:text-2xl mb-12 text-[#F5F2EC]/90 max-w-3xl mx-auto">Vistorias, laudos, inspeções, acompanhamento de obras e soluções técnicas com responsabilidade profissional.</p>
