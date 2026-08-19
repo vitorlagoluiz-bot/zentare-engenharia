@@ -77,7 +77,7 @@ function Index() {
               {navItems.map((item) => (
                 <a 
                   key={item} 
-                  href={`#${item.toLowerCase()}`} 
+                  href={`#${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`} 
                   onClick={() => setIsMenuOpen(false)}
                   className="text-lg font-serif text-[#3B0B12] py-2 border-b border-[#3B0B12]/5"
                 >
