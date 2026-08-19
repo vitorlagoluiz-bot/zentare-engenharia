@@ -27,19 +27,19 @@ function Index() {
     <div className="min-h-screen bg-[#F5F2EC] font-sans text-[#151515]">
       {/* Header */}
       <header 
-        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-6 md:px-12 py-3 md:py-4 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-6 md:px-12 h-[52px] sm:h-[60px] md:h-[72px] transition-all duration-300 ${
           scrolled ? "bg-white shadow-xl" : "bg-black/40 backdrop-blur-[2px]"
         } border-b ${scrolled ? "border-[#3B0B12]/10" : "border-white/10"} ${
           scrolled ? "text-[#151515]" : "text-white"
         }`}
       >
-        <img src={zentareLogo.url} alt="Zentare Engenharia" className="h-7 sm:h-8 md:h-10 w-auto object-contain shrink-0 transition-all" />
+        <img src={zentareLogo.url} alt="Zentare Engenharia" className="h-6 sm:h-7 md:h-10 w-auto object-contain shrink-0 transition-all" />
         
         <nav className="hidden lg:flex items-center gap-6 md:gap-8 text-xs md:text-sm font-medium tracking-wide uppercase">
           {navItems.map((item) => (
             <a 
               key={item} 
-              href={`#${item.toLowerCase()}`} 
+              href={`#${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`} 
               className="hover:text-[#C9A24A] transition-colors relative group whitespace-nowrap"
             >
               {item}
@@ -72,12 +72,12 @@ function Index() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="absolute top-full left-0 right-0 bg-white shadow-2xl border-t border-[#3B0B12]/10 p-6 flex flex-col gap-4 lg:hidden"
+              className="fixed top-[52px] sm:top-[60px] md:top-[72px] left-0 right-0 bg-white shadow-2xl border-t border-[#3B0B12]/10 p-6 flex flex-col gap-4 lg:hidden max-h-[calc(100vh-72px)] overflow-y-auto"
             >
               {navItems.map((item) => (
                 <a 
                   key={item} 
-                  href={`#${item.toLowerCase()}`} 
+                  href={`#${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`} 
                   onClick={() => setIsMenuOpen(false)}
                   className="text-lg font-serif text-[#3B0B12] py-2 border-b border-[#3B0B12]/5"
                 >
@@ -114,7 +114,7 @@ function Index() {
             <a href={WHATSAPP_LINK} className="bg-[#C9A24A] text-[#3B0B12] px-6 md:px-10 py-3 md:py-4 rounded font-bold hover:bg-[#E4C878] transition-all hover:scale-105 text-sm md:text-lg uppercase tracking-wider text-center whitespace-nowrap shadow-lg">
               Solicitar orçamento
             </a>
-            <a href="#serviços" className="bg-white/10 backdrop-blur-md border border-white/30 px-6 md:px-10 py-3 md:py-4 rounded font-bold hover:bg-white hover:text-[#3B0B12] transition-all hover:scale-105 text-sm md:text-lg uppercase tracking-wider text-center whitespace-nowrap shadow-lg">
+            <a href="#servicos" className="bg-white/10 backdrop-blur-md border border-white/30 px-6 md:px-10 py-3 md:py-4 rounded font-bold hover:bg-white hover:text-[#3B0B12] transition-all hover:scale-105 text-sm md:text-lg uppercase tracking-wider text-center whitespace-nowrap shadow-lg">
               Conheça nossos serviços
             </a>
           </div>
@@ -197,7 +197,7 @@ function Index() {
       </section>
 
       {/* Serviços */}
-      <section id="serviços" className="py-24 px-8 bg-[#F5F2EC]">
+      <section id="servicos" className="py-24 px-8 bg-[#F5F2EC]">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-serif text-4xl text-[#3B0B12] mb-6 text-center">Soluções técnicas para cada necessidade</h2>
           <p className="text-center text-lg mb-16 max-w-2xl mx-auto text-[#151515]/70">Conte com a Zentare Engenharia para avaliações, vistorias, laudos e acompanhamento técnico com segurança e responsabilidade profissional.</p>
@@ -309,7 +309,7 @@ function Index() {
             <div>
                 <h4 className="text-[#C9A24A] font-bold mb-6 uppercase tracking-widest text-xs">Navegação</h4>
                 <ul className="space-y-3 text-[#F5F2EC]/60 text-sm">
-                    {navItems.map(i => <li key={i}><a href={`#${i.toLowerCase()}`} className="hover:text-[#C9A24A] transition-colors">{i}</a></li>)}
+                    {navItems.map(i => <li key={i}><a href={`#${i.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`} className="hover:text-[#C9A24A] transition-colors">{i}</a></li>)}
                 </ul>
             </div>
             <div>
