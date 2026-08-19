@@ -114,7 +114,7 @@ function Index() {
             <a href={WHATSAPP_LINK} className="bg-[#C9A24A] text-[#3B0B12] px-6 md:px-10 py-3 md:py-4 rounded font-bold hover:bg-[#E4C878] transition-all hover:scale-105 text-sm md:text-lg uppercase tracking-wider text-center whitespace-nowrap shadow-lg">
               Solicitar orçamento
             </a>
-            <a href="#serviços" className="bg-white/10 backdrop-blur-md border border-white/30 px-6 md:px-10 py-3 md:py-4 rounded font-bold hover:bg-white hover:text-[#3B0B12] transition-all hover:scale-105 text-sm md:text-lg uppercase tracking-wider text-center whitespace-nowrap shadow-lg">
+            <a href="#servicos" className="bg-white/10 backdrop-blur-md border border-white/30 px-6 md:px-10 py-3 md:py-4 rounded font-bold hover:bg-white hover:text-[#3B0B12] transition-all hover:scale-105 text-sm md:text-lg uppercase tracking-wider text-center whitespace-nowrap shadow-lg">
               Conheça nossos serviços
             </a>
           </div>
