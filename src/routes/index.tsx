@@ -280,7 +280,7 @@ function Index() {
         <h2 className="font-serif text-4xl mb-6 text-[#3B0B12]">Precisa de uma avaliação técnica para o seu imóvel ou obra?</h2>
         <p className="text-xl mb-10 text-[#151515]/70">Fale com a Zentare Engenharia e encontre a solução técnica adequada para o seu caso.</p>
         <a href={WHATSAPP_LINK} className="inline-flex items-center gap-3 bg-[#C9A24A] text-[#3B0B12] px-10 py-4 rounded font-bold text-lg hover:bg-[#E4C878]">
-          <MessageCircle className="w-5 h-5" /> SOLICITAR ORÇAMENTO PELO WHATSAPP
+          <img src={whatsappLogo.url} alt="WhatsApp" className="w-6 h-6 object-contain" /> SOLICITAR ORÇAMENTO PELO WHATSAPP
         </a>
       </section>
 
