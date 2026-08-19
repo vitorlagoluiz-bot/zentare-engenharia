@@ -300,7 +300,7 @@ function Index() {
                 <h4 className="text-[#C9A24A] font-bold mb-6 uppercase tracking-widest text-xs">Contato</h4>
                 <div className="space-y-4">
                   <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#C9A24A] font-bold hover:underline">
-                      <MessageCircle className="w-4 h-4" /> WhatsApp
+                      <MessageCircle className="w-4 h-4" /> (11) 91857-9184
                   </a>
                   <p className="text-xs text-[#F5F2EC]/40 leading-relaxed">
                     Atendimento especializado em São Paulo e região.
