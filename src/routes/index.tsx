@@ -72,7 +72,7 @@ function Index() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="absolute top-full left-0 right-0 bg-white shadow-2xl border-t border-[#3B0B12]/10 p-6 flex flex-col gap-4 lg:hidden"
+              className="fixed top-[52px] sm:top-[60px] md:top-[72px] left-0 right-0 bg-white shadow-2xl border-t border-[#3B0B12]/10 p-6 flex flex-col gap-4 lg:hidden max-h-[calc(100vh-72px)] overflow-y-auto"
             >
               {navItems.map((item) => (
                 <a 
