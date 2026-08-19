@@ -323,7 +323,7 @@ function Index() {
         className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 bg-[#25D366] text-white p-3 md:p-4 rounded-full shadow-2xl hover:scale-110 transition-transform active:scale-95 group"
         aria-label="Falar no WhatsApp"
       >
-        <img src={whatsappLogo.url} alt="WhatsApp" className="w-8 h-8 md:w-10 md:h-10 object-contain brightness-0 invert" />
+        <img src={whatsappLogo.url} alt="WhatsApp" className="w-8 h-8 md:w-10 md:h-10 object-contain" />
         <span className="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-white text-[#151515] px-3 py-1.5 rounded shadow-xl text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
           Solicitar Orçamento
         </span>
