@@ -103,7 +103,7 @@ function Index() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#151515] via-[#151515]/80 to-transparent z-0" />
         <div className="absolute inset-0 bg-[#3B0B12]/20 z-0 mix-blend-multiply" />
         
-        <div className="relative z-10 text-left px-6 md:px-12 w-full max-w-6xl mx-auto text-[#F5F2EC] pt-24 pb-12 md:py-32">
+        <div className="relative z-10 text-left px-6 md:px-12 w-full max-w-6xl mx-auto text-[#F5F2EC] pt-32 pb-12 md:py-32">
           <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl mb-4 md:mb-6 leading-tight max-w-4xl break-words drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
             Engenharia que transforma análise técnica em segurança para o seu patrimônio.
           </h1>
