@@ -68,12 +68,12 @@ function Index() {
         </div>
 
         {/* Mobile Navigation - Horizontal Scroll */}
-        <nav className="lg:hidden flex items-center overflow-x-auto no-scrollbar px-4 pb-2 gap-4 text-[10px] font-bold tracking-widest uppercase border-t border-white/10 pt-2">
+        <nav className="lg:hidden flex items-center overflow-x-auto no-scrollbar px-4 pb-2.5 gap-5 text-[10px] font-bold tracking-widest uppercase border-t border-white/10 pt-2.5">
           {navItems.map((item) => (
             <a 
               key={item} 
               href={`#${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`} 
-              className="hover:text-[#C9A24A] transition-colors whitespace-nowrap"
+              className="hover:text-[#C9A24A] transition-colors whitespace-nowrap opacity-90"
             >
               {item}
             </a>
