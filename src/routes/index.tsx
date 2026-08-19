@@ -5,7 +5,7 @@ import { ArrowRight, Building2, ShieldCheck, FileCheck, ClipboardList, HardHat, 
 import zentareLogo from "@/assets/zentare-logo.png.asset.json";
 import engJaqueline from "@/assets/eng-jaqueline.png.asset.json";
 import engWork from "@/assets/eng-work.png.asset.json";
-import whatsappLogo from "@/assets/whatsapp-logo.png.asset.json";
+import whatsappLogo from "@/assets/whatsapp-correct-logo.png.asset.json";
 
 
 export const Route = createFileRoute("/")({
