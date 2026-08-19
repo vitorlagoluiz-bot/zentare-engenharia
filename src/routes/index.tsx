@@ -206,7 +206,7 @@ function Index() {
               { title: "Laudo para Perícias Judiciais", desc: "Perícias com imparcialidade, para resolução de litígios de forma justa, técnica e clara.", icon: FileCheck },
               { title: "Vistoria Técnica de Imóveis", desc: "Identificação de condições, falhas e não conformidades para segurança e preservação.", icon: Building2 },
               { title: "Laudo para Avaliações", desc: "Avaliações patrimoniais precisas para decisões financeiras e administrativas.", icon: ClipboardList },
-              { title: "Inspeção Predial", desc: "Segurança, conservação e valorização para síndicos e proprietários.", icon: ShieldCheck },
+              { title: "Inspeção e manutenção predial", desc: "Segurança, conservação e valorização para síndicos e proprietários.", icon: ShieldCheck },
               { title: "ART", desc: "Emissão de documentação para formalizar a responsabilidade profissional.", icon: Award },
               { title: "Acompanhamento de Obras", desc: "Verificação de execução, qualidade e conformidade com normas.", icon: HardHat },
               { title: "Regularização de Imóveis", desc: "Assessoria técnica para regularização documental e conformidade legal de edificações.", icon: CheckCircle2 },
