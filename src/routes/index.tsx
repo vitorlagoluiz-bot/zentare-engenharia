@@ -197,7 +197,7 @@ function Index() {
       </section>
 
       {/* Serviços */}
-      <section id="serviços" className="py-24 px-8 bg-[#F5F2EC]">
+      <section id="servicos" className="py-24 px-8 bg-[#F5F2EC]">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-serif text-4xl text-[#3B0B12] mb-6 text-center">Soluções técnicas para cada necessidade</h2>
           <p className="text-center text-lg mb-16 max-w-2xl mx-auto text-[#151515]/70">Conte com a Zentare Engenharia para avaliações, vistorias, laudos e acompanhamento técnico com segurança e responsabilidade profissional.</p>
