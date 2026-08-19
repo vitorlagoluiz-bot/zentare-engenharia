@@ -309,7 +309,7 @@ function Index() {
             <div>
                 <h4 className="text-[#C9A24A] font-bold mb-6 uppercase tracking-widest text-xs">Navegação</h4>
                 <ul className="space-y-3 text-[#F5F2EC]/60 text-sm">
-                    {navItems.map(i => <li key={i}><a href={`#${i.toLowerCase()}`} className="hover:text-[#C9A24A] transition-colors">{i}</a></li>)}
+                    {navItems.map(i => <li key={i}><a href={`#${i.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`} className="hover:text-[#C9A24A] transition-colors">{i}</a></li>)}
                 </ul>
             </div>
             <div>
