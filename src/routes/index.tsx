@@ -39,7 +39,7 @@ function Index() {
           {navItems.map((item) => (
             <a 
               key={item} 
-              href={`#${item.toLowerCase()}`} 
+              href={`#${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`} 
               className="hover:text-[#C9A24A] transition-colors relative group whitespace-nowrap"
             >
               {item}
