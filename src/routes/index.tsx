@@ -27,7 +27,7 @@ function Index() {
     <div className="min-h-screen bg-[#F5F2EC] font-sans text-[#151515]">
       {/* Header */}
       <header 
-        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-6 md:px-12 py-3 md:py-4 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-6 md:px-12 h-[52px] sm:h-[60px] md:h-[72px] transition-all duration-300 ${
           scrolled ? "bg-white shadow-xl" : "bg-black/40 backdrop-blur-[2px]"
         } border-b ${scrolled ? "border-[#3B0B12]/10" : "border-white/10"} ${
           scrolled ? "text-[#151515]" : "text-white"
