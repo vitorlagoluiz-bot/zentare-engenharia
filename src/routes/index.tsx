@@ -27,74 +27,58 @@ function Index() {
     <div className="min-h-screen bg-[#F5F2EC] font-sans text-[#151515]">
       {/* Header */}
       <header 
-        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-6 md:px-12 h-[52px] sm:h-[60px] md:h-[72px] transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled ? "bg-white shadow-xl" : "bg-black/40 backdrop-blur-[2px]"
         } border-b ${scrolled ? "border-[#3B0B12]/10" : "border-white/10"} ${
           scrolled ? "text-[#151515]" : "text-white"
         }`}
       >
-        <img src={zentareLogo.url} alt="Zentare Engenharia" className="h-6 sm:h-7 md:h-10 w-auto object-contain shrink-0 transition-all" />
-        
-        <nav className="hidden lg:flex items-center gap-6 md:gap-8 text-xs md:text-sm font-medium tracking-wide uppercase">
-          {navItems.map((item) => (
+        <div className="flex items-center justify-between px-4 sm:px-6 md:px-12 h-[52px] sm:h-[60px] md:h-[72px]">
+          <img src={zentareLogo.url} alt="Zentare Engenharia" className="h-6 sm:h-7 md:h-10 w-auto object-contain shrink-0" />
+          
+          <nav className="hidden lg:flex items-center gap-6 md:gap-8 text-xs md:text-sm font-medium tracking-wide uppercase">
+            {navItems.map((item) => (
+              <a 
+                key={item} 
+                href={`#${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`} 
+                className="hover:text-[#C9A24A] transition-colors relative group whitespace-nowrap"
+              >
+                {item}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#C9A24A] transition-all group-hover:w-full"></span>
+              </a>
+            ))}
             <a 
-              key={item} 
-              href={`#${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`} 
-              className="hover:text-[#C9A24A] transition-colors relative group whitespace-nowrap"
+              href={WHATSAPP_LINK} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-[#C9A24A] text-[#3B0B12] px-4 md:px-6 py-2 md:py-2.5 rounded font-bold hover:bg-[#E4C878] transition-colors text-xs md:text-sm whitespace-nowrap shadow-lg hover:shadow-xl"
             >
-              {item}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#C9A24A] transition-all group-hover:w-full"></span>
+              SOLICITAR ORÇAMENTO
             </a>
-          ))}
+          </nav>
+
           <a 
             href={WHATSAPP_LINK} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="bg-[#C9A24A] text-[#3B0B12] px-4 md:px-6 py-2 md:py-2.5 rounded font-bold hover:bg-[#E4C878] transition-colors text-xs md:text-sm whitespace-nowrap shadow-lg hover:shadow-xl"
+            className="lg:hidden bg-[#C9A24A] text-[#3B0B12] px-3 py-1.5 rounded text-[10px] font-bold shadow-lg"
           >
-            SOLICITAR ORÇAMENTO
+            ORÇAMENTO
           </a>
-        </nav>
+        </div>
 
-        <button 
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="lg:hidden p-2 rounded-md hover:bg-[#3B0B12]/5 transition-colors"
-          aria-label="Menu"
-        >
-          <div className={`w-6 h-0.5 mb-1.5 transition-all bg-current ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`} />
-          <div className={`w-6 h-0.5 mb-1.5 transition-all bg-current ${isMenuOpen ? "opacity-0" : ""}`} />
-          <div className={`w-6 h-0.5 transition-all bg-current ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
-        </button>
-
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="fixed top-[52px] sm:top-[60px] md:top-[72px] left-0 right-0 bg-white shadow-2xl border-t border-[#3B0B12]/10 p-6 flex flex-col gap-4 lg:hidden max-h-[calc(100vh-72px)] overflow-y-auto"
+        {/* Mobile Navigation - Horizontal Scroll */}
+        <nav className="lg:hidden flex items-center overflow-x-auto no-scrollbar px-4 pb-2.5 gap-5 text-[10px] font-bold tracking-widest uppercase border-t border-white/10 pt-2.5">
+          {navItems.map((item) => (
+            <a 
+              key={item} 
+              href={`#${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`} 
+              className="hover:text-[#C9A24A] transition-colors whitespace-nowrap opacity-90"
             >
-              {navItems.map((item) => (
-                <a 
-                  key={item} 
-                  href={`#${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`} 
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-lg font-serif text-[#3B0B12] py-2 border-b border-[#3B0B12]/5"
-                >
-                  {item}
-                </a>
-              ))}
-              <a 
-                href={WHATSAPP_LINK}
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-[#C9A24A] text-[#3B0B12] py-4 rounded font-bold text-center mt-4"
-              >
-                SOLICITAR ORÇAMENTO
-              </a>
-            </motion.div>
-          )}
-        </AnimatePresence>
+              {item}
+            </a>
+          ))}
+        </nav>
       </header>
 
       {/* Hero */}
@@ -103,7 +87,7 @@ function Index() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#151515] via-[#151515]/80 to-transparent z-0" />
         <div className="absolute inset-0 bg-[#3B0B12]/20 z-0 mix-blend-multiply" />
         
-        <div className="relative z-10 text-left px-6 md:px-12 w-full max-w-6xl mx-auto text-[#F5F2EC] pt-32 pb-12 md:py-32">
+        <div className="relative z-10 text-left px-6 md:px-12 w-full max-w-6xl mx-auto text-[#F5F2EC] pt-40 pb-12 md:py-32">
           <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl mb-4 md:mb-6 leading-tight max-w-4xl break-words drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
             Engenharia que transforma análise técnica em segurança para o seu patrimônio.
           </h1>
