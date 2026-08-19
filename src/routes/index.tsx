@@ -209,6 +209,7 @@ function Index() {
               { title: "Inspeção Predial", desc: "Segurança, conservação e valorização para síndicos e proprietários.", icon: ShieldCheck },
               { title: "ART", desc: "Emissão de documentação para formalizar a responsabilidade profissional.", icon: Award },
               { title: "Acompanhamento de Obras", desc: "Verificação de execução, qualidade e conformidade com normas.", icon: HardHat },
+              { title: "Regularização de Imóveis", desc: "Assessoria técnica para regularização documental e conformidade legal de edificações.", icon: CheckCircle2 },
             ].map((s) => (
               <div key={s.title} className="p-6 md:p-8 border border-[#3B0B12]/10 hover:shadow-xl transition-all duration-300 group bg-white flex flex-col h-full">
                 <s.icon className="w-10 h-10 md:w-12 md:h-12 text-[#C9A24A] mb-6" />
