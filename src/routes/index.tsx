@@ -302,7 +302,7 @@ function Index() {
                 <h4 className="text-[#C9A24A] font-bold mb-6 uppercase tracking-widest text-xs">Contato</h4>
                 <div className="space-y-4">
                   <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#C9A24A] font-bold hover:underline">
-                      <MessageCircle className="w-4 h-4" /> (11) 91857-9184
+                      <img src={whatsappLogo.url} alt="WhatsApp" className="w-4 h-4 object-contain" /> (11) 91857-9184
                   </a>
                   <p className="text-xs text-[#F5F2EC]/40 leading-relaxed">
                     Atendimento especializado em São Paulo e região.
@@ -320,10 +320,10 @@ function Index() {
         href={WHATSAPP_LINK} 
         target="_blank" 
         rel="noopener noreferrer" 
-        className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform active:scale-95 group"
+        className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 bg-[#25D366] text-white p-3 md:p-4 rounded-full shadow-2xl hover:scale-110 transition-transform active:scale-95 group"
         aria-label="Falar no WhatsApp"
       >
-        <MessageCircle className="w-6 h-6 md:w-8 md:h-8" />
+        <img src={whatsappLogo.url} alt="WhatsApp" className="w-8 h-8 md:w-10 md:h-10 object-contain brightness-0 invert" />
         <span className="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-white text-[#151515] px-3 py-1.5 rounded shadow-xl text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
           Solicitar Orçamento
         </span>
